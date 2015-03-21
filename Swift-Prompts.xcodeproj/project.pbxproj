@@ -66,16 +66,8 @@
 			isa = PBXGroup;
 			children = (
 				646C5B2B1ABA6F54007AFF34 /* SwiftPrompts.swift */,
-				643DD2061AB924BE00D7F469 /* Supporting External Files */,
 			);
 			name = "UI Assets";
-			sourceTree = "<group>";
-		};
-		643DD2061AB924BE00D7F469 /* Supporting External Files */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Supporting External Files";
 			sourceTree = "<group>";
 		};
 		6472B8EB1AB5F68500B4BA44 = {

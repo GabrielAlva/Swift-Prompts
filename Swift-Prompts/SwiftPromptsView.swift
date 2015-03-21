@@ -9,8 +9,18 @@
 import Foundation
 import UIKit
 
+@objc protocol SwiftPromptsProtocol
+{
+    optional func clickedOnTheMainButton()
+    optional func clickedOnTheSecondButton()
+    optional func promptWasDismissed()
+}
+
 class SwiftPromptsView: UIView
 {
+    //Delegate var
+    var delegate : SwiftPromptsProtocol?
+    
     //Variables for the background view
     var blurringLevel : CGFloat!
     var colorWithTransparency : UIColor!
@@ -32,6 +42,7 @@ class SwiftPromptsView: UIView
     var promptTopLineVisibility : Bool = true
     var promptBottomLineVisibility : Bool = false
     var promptOutlineVisibility : Bool = false
+    var promptButtonDividerVisibility : Bool = true
     
     //Colors of the items within the prompt
     var promptBackgroundColor : UIColor = UIColor.whiteColor()
@@ -42,13 +53,17 @@ class SwiftPromptsView: UIView
     var promptOutlineColor : UIColor = UIColor.clearColor()
     var promptTopLineColor : UIColor = UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1.0)
     var promptBottomLineColor : UIColor = UIColor.clearColor()
+    var promptButtonDividerColor : UIColor = UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1.0)
     
-    //Other variables
+    //Button panel vars
     var enableDoubleButtons : Bool = false
     var buttonText : String = "Post"
     var secondButtonText : String = "Cancel"
     var buttonColor : UIColor = UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1.0)
     var secondButtonColor : UIColor = UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1.0)
+    
+    //Gesture enabling
+    var enablePromptGestures : Bool = true
     
     override func drawRect(rect: CGRect)
     {
@@ -134,23 +149,27 @@ class SwiftPromptsView: UIView
             button.setTitleColor(buttonColor, forState: .Normal)
             button.titleLabel!.font = UIFont(name: "HelveticaNeue-Light", size: 20)
             button.setTitle(buttonText, forState: UIControlState.Normal)
-            button.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+            button.tag = 1
+            button.addTarget(self, action: "panelButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
     
             swiftPrompt.addSubview(button)
         }
         else
         {
-            var divider = UIView(frame: CGRectMake(promptWidth/2, promptHeight-47, 1, 31))
-            divider.backgroundColor = promptBottomLineColor
-            
-            swiftPrompt.addSubview(divider)
+            if (promptButtonDividerVisibility) {
+                var divider = UIView(frame: CGRectMake(promptWidth/2, promptHeight-47, 1, 31))
+                divider.backgroundColor = promptButtonDividerColor
+                
+                swiftPrompt.addSubview(divider)
+            }
             
             let button   = UIButton.buttonWithType(UIButtonType.System) as UIButton
             button.frame = CGRectMake(promptWidth/2, promptHeight-52, promptWidth/2, 41)
             button.setTitleColor(buttonColor, forState: .Normal)
             button.titleLabel!.font = UIFont(name: "HelveticaNeue-Light", size: 20)
             button.setTitle(buttonText, forState: UIControlState.Normal)
-            button.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+            button.tag = 1
+            button.addTarget(self, action: "panelButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
             
             swiftPrompt.addSubview(button)
             
@@ -159,7 +178,8 @@ class SwiftPromptsView: UIView
             secondButton.setTitleColor(secondButtonColor, forState: .Normal)
             secondButton.titleLabel!.font = UIFont(name: "HelveticaNeue-Light", size: 20)
             secondButton.setTitle(secondButtonText, forState: UIControlState.Normal)
-            secondButton.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+            secondButton.tag = 2
+            secondButton.addTarget(self, action: "panelButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
             
             swiftPrompt.addSubview(secondButton)
         }
@@ -172,9 +192,16 @@ class SwiftPromptsView: UIView
         self.layer.addAnimation(applicationLoadViewIn, forKey: kCATransitionReveal)
     }
     
-    func buttonAction(sender:UIButton!)
+    func panelButtonAction(sender:UIButton?)
     {
-        println("Button tapped")
+        switch (sender!.tag) {
+        case 1:
+            delegate?.clickedOnTheMainButton?()
+        case 2:
+            delegate?.clickedOnTheSecondButton?()
+        default:
+            delegate?.promptWasDismissed?()
+        }
     }
     
     // MARK: - Helper Functions
@@ -222,7 +249,9 @@ class SwiftPromptsView: UIView
     func setSecondButtonText (secondButtonTitle : String) { secondButtonText = secondButtonTitle }
     func setButtonColor (colorForButton : UIColor) { buttonColor = colorForButton }
     func setSecondButtonColor (colorForSecondButton : UIColor) { secondButtonColor = colorForSecondButton }
-    
+    func setPromptButtonDividerColor (dividerColor : UIColor) { promptButtonDividerColor = dividerColor }
+    func setPromptButtonDividerVisibility (dividerVisibility : Bool) { promptButtonDividerVisibility = dividerVisibility }
+    func enableGesturesOnPrompt (gestureEnabler : Bool) { enablePromptGestures = gestureEnabler }
     
     // MARK: - Create The Prompt With A UIView Sublass
     class PromptBoxView: UIView
@@ -238,9 +267,11 @@ class SwiftPromptsView: UIView
             var promptSize = CGRect(x: 0, y: 0, width: masterClass.promptWidth, height: masterClass.promptHeight)
             super.init(frame: promptSize)
             
-            // Initialization Gesture Recognizer
-            var panRecognizer = UIPanGestureRecognizer(target:self, action:"detectPan:")
-            self.gestureRecognizers = [panRecognizer]
+            // Initialize Gesture Recognizer
+            if (masterClass.enablePromptGestures) {
+                var panRecognizer = UIPanGestureRecognizer(target:self, action:"detectPan:")
+                self.gestureRecognizers = [panRecognizer]
+            }
         }
 
         required init(coder aDecoder: NSCoder) {
@@ -260,8 +291,6 @@ class SwiftPromptsView: UIView
             var horizontalDistanceFromCenter : CGFloat = fabs(translation.x)
             var shouldDismissPrompt : Bool = false
             
-            println("X Point: \(horizontalDistanceFromCenter) Y Point: \(verticalDistanceFromCenter)")
-            
             if (verticalDistanceFromCenter < 100.0) {
                 var radiusAlphaLevel : CGFloat = 1.0 - verticalDistanceFromCenter/100
                 self.alpha = radiusAlphaLevel
@@ -278,6 +307,7 @@ class SwiftPromptsView: UIView
                         self.masterClass.layer.opacity = 0.0
                         }, completion: {
                             (value: Bool) in
+                            self.masterClass.delegate?.promptWasDismissed?()
                             self.removeFromSuperview()
                             self.masterClass.removeFromSuperview()
                     })
@@ -297,15 +327,3 @@ class SwiftPromptsView: UIView
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-

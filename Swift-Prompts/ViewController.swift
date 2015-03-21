@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,  SwiftPromptsProtocol{
 
     @IBOutlet var backgroundImageView: UIImageView!
     
@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     {
         //Create an instance of SwiftPromptsView in a var
         var prompt = SwiftPromptsView(frame: self.view.bounds)
+        prompt.delegate = self
         
         //Enable blurring and add its level of blur
         prompt.enableBlurringView()
@@ -46,6 +47,18 @@ class ViewController: UIViewController {
         prompt.enableDoubleButtonsOnPrompt()
         
         self.view.addSubview(prompt)
+    }
+    
+    func clickedOnTheMainButton() {
+        println("Clicked on the main button")
+    }
+    
+    func clickedOnTheSecondButton() {
+        println("Clicked on the second button")
+    }
+    
+    func promptWasDismissed() {
+        println("Dismissed view")
     }
     
     override func didReceiveMemoryWarning() {
