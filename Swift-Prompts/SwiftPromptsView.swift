@@ -21,8 +21,8 @@ class SwiftPromptsView: UIView
     var enableDarkEffect : Bool!            //Disables enableBlurring and enableTransparencyWithColor
     
     //Variables for the prompt with their default values
-    var promptHeight : CGFloat = 340.0
-    var promptWidth : CGFloat = 340.0
+    var promptHeight : CGFloat = 197.0
+    var promptWidth : CGFloat = 225.0
     var promtHeader : String = "Success"
     var promptHeaderTxtSize : CGFloat = 20.0
     var promptContentText : String = "You have successfully posted this item to your Facebook wall."
@@ -52,6 +52,8 @@ class SwiftPromptsView: UIView
     
     override func drawRect(rect: CGRect)
     {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "orientationChanged", name: UIDeviceOrientationDidChangeNotification, object: nil)
+        
         var backgroundImage : UIImage = snapshot(self.superview)
         var effectImage : UIImage!
         var transparencyAndColorImageView : UIImageView!
@@ -188,6 +190,15 @@ class SwiftPromptsView: UIView
         return image;
     }
     
+    func orientationChanged()
+    {
+        self.removeFromSuperview()
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     // MARK: - API Functions For The Background
     func setBlurringLevel(level: CGFloat) { blurringLevel = level }
     func setColorWithTransparency(color: UIColor) { colorWithTransparency = color }
@@ -227,12 +238,20 @@ class SwiftPromptsView: UIView
     // MARK: - Create The Prompt With A UIView Sublass
     class PromptBoxView: UIView
     {
+        //Mater Class
         let masterClass : SwiftPromptsView
+        
+        //Gesture Recognizer Vars
+        var lastLocation:CGPoint = CGPointMake(0, 0)
         
         init(master: SwiftPromptsView) {
             masterClass = master
             var promptSize = CGRect(x: 0, y: 0, width: masterClass.promptWidth, height: masterClass.promptHeight)
             super.init(frame: promptSize)
+            
+            // Initialization Gesture Recognizer
+            var panRecognizer = UIPanGestureRecognizer(target:self, action:"detectPan:")
+            self.gestureRecognizers = [panRecognizer]
         }
 
         required init(coder aDecoder: NSCoder) {
@@ -242,6 +261,50 @@ class SwiftPromptsView: UIView
         override func drawRect(rect: CGRect)
         {
             SwiftPrompts.drawSwiftPrompt(frame: self.bounds, backgroundColor: masterClass.promptBackgroundColor, headerBarColor: masterClass.promptHeaderBarColor, bottomBarColor: masterClass.promptBottomBarColor, headerTxtColor: masterClass.promptHeaderTxtColor, contentTxtColor: masterClass.promptContentTxtColor, outlineColor: masterClass.promptOutlineColor, topLineColor: masterClass.promptTopLineColor, bottomLineColor: masterClass.promptBottomLineColor, promptText: masterClass.promptContentText, textSize: masterClass.promptContentTxtSize, topBarVisibility: masterClass.promptTopBarVisibility, bottomBarVisibility: masterClass.promptBottomBarVisibility, headerText: masterClass.promtHeader, headerSize: masterClass.promptHeaderTxtSize, topLineVisibility: masterClass.promptTopLineVisibility, bottomLineVisibility: masterClass.promptBottomLineVisibility, outlineVisibility: masterClass.promptOutlineVisibility)
+        }
+        
+        func detectPan(recognizer:UIPanGestureRecognizer) {
+            var translation  = recognizer.translationInView(self)
+            self.center = CGPointMake(lastLocation.x + translation.x, lastLocation.y + translation.y)
+            
+            var verticalDistanceFromCenter : CGFloat = fabs(translation.y)
+            var horizontalDistanceFromCenter : CGFloat = fabs(translation.x)
+            var shouldDismissPrompt : Bool = false
+            
+            println("X Point: \(horizontalDistanceFromCenter) Y Point: \(verticalDistanceFromCenter)")
+            
+            if (verticalDistanceFromCenter < 100.0) {
+                var radiusAlphaLevel : CGFloat = 1.0 - verticalDistanceFromCenter/100
+                self.alpha = radiusAlphaLevel
+                shouldDismissPrompt = false
+            } else {
+                self.alpha = 0.0
+                shouldDismissPrompt = true
+            }
+            
+            if (recognizer.state == UIGestureRecognizerState.Ended) {
+                if (shouldDismissPrompt == true) {
+                    UIView.animateWithDuration(0.6, animations: {
+                        self.layer.opacity = 0.0
+                        self.masterClass.layer.opacity = 0.0
+                        }, completion: {
+                            (value: Bool) in
+                            self.removeFromSuperview()
+                            self.masterClass.removeFromSuperview()
+                    })
+                } else {
+                    UIView.animateWithDuration(0.3, animations: {
+                        self.center = self.masterClass.center
+                        self.alpha = 1.0
+                    })
+                }
+            }
+        }
+        
+        override func touchesBegan(touches: NSSet, withEvent event: UIEvent)
+        {
+            // Remember original location
+            lastLocation = self.center
         }
     }
 }
