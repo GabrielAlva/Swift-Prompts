@@ -52,8 +52,6 @@ class SwiftPromptsView: UIView
     
     override func drawRect(rect: CGRect)
     {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "orientationChanged", name: UIDeviceOrientationDidChangeNotification, object: nil)
-        
         var backgroundImage : UIImage = snapshot(self.superview)
         var effectImage : UIImage!
         var transparencyAndColorImageView : UIImageView!
@@ -188,15 +186,6 @@ class SwiftPromptsView: UIView
         UIGraphicsEndImageContext();
         
         return image;
-    }
-    
-    func orientationChanged()
-    {
-        self.removeFromSuperview()
-    }
-    
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     // MARK: - API Functions For The Background
