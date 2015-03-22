@@ -12,18 +12,21 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
 
     @IBOutlet var backgroundImageView: UIImageView!
     
+    var prompt = SwiftPromptsView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Display the background view image
         backgroundImageView.image = UIImage(named: "SpaceShuttle")
         backgroundImageView.contentMode = .ScaleAspectFill
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "rotated", name: UIDeviceOrientationDidChangeNotification, object: nil)
     }
 
     @IBAction func launchPrompt(sender: UIButton)
     {
         //Create an instance of SwiftPromptsView in a var
-        var prompt = SwiftPromptsView(frame: self.view.bounds)
+        prompt = SwiftPromptsView(frame: self.view.bounds)
         prompt.delegate = self
         
         //Enable blurring and add its level of blur
@@ -47,12 +50,19 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
         self.view.addSubview(prompt)
     }
     
+    func rotated()
+    {
+        prompt.removeFromSuperview()
+    }
+    
     func clickedOnTheMainButton() {
         println("Clicked on the main button")
     }
     
     func clickedOnTheSecondButton() {
         println("Clicked on the second button")
+        prompt.dismissPrompt()
+        
     }
     
     func promptWasDismissed() {

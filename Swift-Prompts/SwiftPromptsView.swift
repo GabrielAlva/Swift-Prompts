@@ -187,6 +187,17 @@ class SwiftPromptsView: UIView
         return image;
     }
     
+    func dismissPrompt()
+    {
+        UIView.animateWithDuration(0.6, animations: {
+            self.layer.opacity = 0.0
+            }, completion: {
+                (value: Bool) in
+                self.delegate?.promptWasDismissed?()
+                self.removeFromSuperview()
+        })
+    }
+    
     // MARK: - API Functions For The Background
     func setBlurringLevel(level: CGFloat) { blurringLevel = level }
     func setColorWithTransparency(color: UIColor) { colorWithTransparency = color }
@@ -266,9 +277,11 @@ class SwiftPromptsView: UIView
             if (verticalDistanceFromCenter < 100.0) {
                 var radiusAlphaLevel : CGFloat = 1.0 - verticalDistanceFromCenter/100
                 self.alpha = radiusAlphaLevel
+                //self.superview!.alpha = radiusAlphaLevel
                 shouldDismissPrompt = false
             } else {
                 self.alpha = 0.0
+                //self.superview!.alpha = 0.0
                 shouldDismissPrompt = true
             }
             
@@ -287,6 +300,7 @@ class SwiftPromptsView: UIView
                     UIView.animateWithDuration(0.3, animations: {
                         self.center = self.masterClass.center
                         self.alpha = 1.0
+                        //self.superview!.alpha = 1.0
                     })
                 }
             }
