@@ -27,11 +27,9 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
         prompt.delegate = self
         
         //Enable blurring and add its level of blur
-        prompt.enableBlurringView()
         prompt.setBlurringLevel(2.0)
         
         //Enable a transparency with color view and set its values
-        prompt.enableTransparencyWithColorView()
         prompt.setColorWithTransparency(UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.64))
         
         //Set the properties of the promt to look as desired

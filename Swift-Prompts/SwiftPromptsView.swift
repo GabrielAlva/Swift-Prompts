@@ -22,13 +22,10 @@ class SwiftPromptsView: UIView
     var delegate : SwiftPromptsProtocol?
     
     //Variables for the background view
-    var blurringLevel : CGFloat!
-    var colorWithTransparency : UIColor!
-    var enableBlurring : Bool!
-    var enableTransparencyWithColor : Bool!
-    var enableLightEffect : Bool!           //Disables enableBlurring and enableTransparencyWithColor
-    var enableExtraLightEffect : Bool!      //Disables enableBlurring and enableTransparencyWithColor
-    var enableDarkEffect : Bool!            //Disables enableBlurring and enableTransparencyWithColor
+    var blurringLevel : CGFloat = 5.0
+    var colorWithTransparency = UIColor(red: 255.0, green: 255.0, blue: 255.0, alpha: 0.64)
+    var enableBlurring : Bool = true
+    var enableTransparencyWithColor : Bool = true
     
     //Variables for the prompt with their default values
     var promptHeight : CGFloat = 197.0
@@ -65,73 +62,48 @@ class SwiftPromptsView: UIView
     //Gesture enabling
     var enablePromptGestures : Bool = true
     
+    //Declare the enum for use in the construction of the background switch
+    enum TypeOfBackground {
+        case LeveledBlurredWithTransparencyView
+        case LightBlurredEffect
+        case ExtraLightBlurredEffect
+        case DarkBlurredEffect
+    }
+    var backgroundType = TypeOfBackground.LeveledBlurredWithTransparencyView
+    
     override func drawRect(rect: CGRect)
     {
         var backgroundImage : UIImage = snapshot(self.superview)
         var effectImage : UIImage!
         var transparencyAndColorImageView : UIImageView!
         
-        //Check the light or dark effects, if all are disabled then enable the custom effects.
-        if ((enableLightEffect == nil) && (enableExtraLightEffect == nil) && (enableDarkEffect == nil))
+        switch backgroundType
         {
-            //Add a blurring effect to the view if enabled.
-            if ((enableBlurring) != nil)
-            {
-                if ((blurringLevel) != nil) {
-                    effectImage = backgroundImage.applyBlurWithRadius(blurringLevel, tintColor: nil, saturationDeltaFactor: 1.0, maskImage: nil)
-                }
-                else {
-                    effectImage = backgroundImage.applyBlurWithRadius(5.0, tintColor: nil, saturationDeltaFactor: 1.0, maskImage: nil)
-                }
-                
+        case .LeveledBlurredWithTransparencyView:
+            if (enableBlurring) {
+                effectImage = backgroundImage.applyBlurWithRadius(blurringLevel, tintColor: nil, saturationDeltaFactor: 1.0, maskImage: nil)
                 var blurredImageView = UIImageView(image: effectImage)
                 self.addSubview(blurredImageView)
             }
-            else
-            {
-                var bgImageView = UIImageView(image: backgroundImage)
-                self.addSubview(bgImageView)
-            }
-            
-            //Add a transparency with color effect to the view if enabled.
-            if ((enableTransparencyWithColor) != nil)
-            {
-                if ((colorWithTransparency) != nil) {
-                    transparencyAndColorImageView = UIImageView(frame: self.bounds)
-                    transparencyAndColorImageView.backgroundColor = colorWithTransparency;
-                } else {
-                    transparencyAndColorImageView = UIImageView(frame: self.bounds)
-                    transparencyAndColorImageView.backgroundColor = UIColor(red: 255.0, green: 255.0, blue: 255.0, alpha: 0.64)
-                }
-                
+            if (enableTransparencyWithColor) {
+                transparencyAndColorImageView = UIImageView(frame: self.bounds)
+                transparencyAndColorImageView.backgroundColor = colorWithTransparency;
                 self.addSubview(transparencyAndColorImageView)
             }
-        }
-        else
-        {
-            if (enableLightEffect == true)
-            {
-                effectImage = backgroundImage.applyLightEffect()
-                var lightEffectImageView = UIImageView(image: effectImage)
-                self.addSubview(lightEffectImageView)
-            }
-            else if (enableExtraLightEffect == true)
-            {
-                effectImage = backgroundImage.applyExtraLightEffect()
-                var extraLightEffectImageView = UIImageView(image: effectImage)
-                self.addSubview(extraLightEffectImageView)
-            }
-            else if (enableDarkEffect == true)
-            {
-                effectImage = backgroundImage.applyDarkEffect()
-                var darkEffectImageView = UIImageView(image: effectImage)
-                self.addSubview(darkEffectImageView)
-            }
-            else
-            {
-                var snapShotImageView = UIImageView(image: backgroundImage)
-                self.addSubview(snapShotImageView)
-            }
+        case .LightBlurredEffect:
+            effectImage = backgroundImage.applyLightEffect()
+            var lightEffectImageView = UIImageView(image: effectImage)
+            self.addSubview(lightEffectImageView)
+            
+        case .ExtraLightBlurredEffect:
+            effectImage = backgroundImage.applyExtraLightEffect()
+            var extraLightEffectImageView = UIImageView(image: effectImage)
+            self.addSubview(extraLightEffectImageView)
+            
+        case .DarkBlurredEffect:
+            effectImage = backgroundImage.applyDarkEffect()
+            var darkEffectImageView = UIImageView(image: effectImage)
+            self.addSubview(darkEffectImageView)
         }
         
         //Create the prompt and assign its size and position
@@ -218,11 +190,11 @@ class SwiftPromptsView: UIView
     // MARK: - API Functions For The Background
     func setBlurringLevel(level: CGFloat) { blurringLevel = level }
     func setColorWithTransparency(color: UIColor) { colorWithTransparency = color }
-    func enableBlurringView () { enableBlurring = true }
-    func enableTransparencyWithColorView () { enableTransparencyWithColor = true }
-    func enableLightEffectView () { enableLightEffect = true; enableExtraLightEffect = false; enableDarkEffect = false }
-    func enableExtraLightEffectView () { enableLightEffect = false; enableExtraLightEffect = true; enableDarkEffect = false }
-    func enableDarkEffectView () { enableLightEffect = false; enableExtraLightEffect = false; enableDarkEffect = true }
+    func enableBlurringView (enabler : Bool) { enableBlurring = enabler; backgroundType = TypeOfBackground.LeveledBlurredWithTransparencyView; }
+    func enableTransparencyWithColorView (enabler : Bool) { enableTransparencyWithColor = enabler; backgroundType = TypeOfBackground.LeveledBlurredWithTransparencyView; }
+    func enableLightEffectView () { backgroundType = TypeOfBackground.LightBlurredEffect }
+    func enableExtraLightEffectView () { backgroundType = TypeOfBackground.ExtraLightBlurredEffect }
+    func enableDarkEffectView () { backgroundType = TypeOfBackground.DarkBlurredEffect }
     
     // MARK: - API Functions For The Prompt
     func setPromptHeight (height : CGFloat) { promptHeight = height }
