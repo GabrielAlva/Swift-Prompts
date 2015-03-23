@@ -40,6 +40,7 @@ class SwiftPromptsView: UIView
     var promptBottomLineVisibility : Bool = false
     var promptOutlineVisibility : Bool = false
     var promptButtonDividerVisibility : Bool = true
+    var promptDismissIconVisibility : Bool = true
     
     //Colors of the items within the prompt
     var promptBackgroundColor : UIColor = UIColor.whiteColor()
@@ -51,6 +52,7 @@ class SwiftPromptsView: UIView
     var promptTopLineColor : UIColor = UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1.0)
     var promptBottomLineColor : UIColor = UIColor.clearColor()
     var promptButtonDividerColor : UIColor = UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1.0)
+    var promptDismissIconColor : UIColor = UIColor.whiteColor()
     
     //Button panel vars
     var enableDoubleButtons : Bool = false
@@ -156,6 +158,16 @@ class SwiftPromptsView: UIView
             swiftPrompt.addSubview(secondButton)
         }
         
+        //Add the top dismiss button if enabled
+        if (promptDismissIconVisibility)
+        {
+            let dismissButton   = UIButton.buttonWithType(UIButtonType.System) as UIButton
+            dismissButton.frame = CGRectMake(5, 17, 35, 35)
+            dismissButton.addTarget(self, action: "dismissPrompt", forControlEvents: UIControlEvents.TouchUpInside)
+            
+            swiftPrompt.addSubview(dismissButton)
+        }
+        
         //Apply animation effect to present this view
         var applicationLoadViewIn = CATransition()
         applicationLoadViewIn.duration = 0.4
@@ -234,6 +246,8 @@ class SwiftPromptsView: UIView
     func setSecondButtonColor (colorForSecondButton : UIColor) { secondButtonColor = colorForSecondButton }
     func setPromptButtonDividerColor (dividerColor : UIColor) { promptButtonDividerColor = dividerColor }
     func setPromptButtonDividerVisibility (dividerVisibility : Bool) { promptButtonDividerVisibility = dividerVisibility }
+    func setPromptDismissIconColor (dismissIconColor : UIColor) { promptDismissIconColor = dismissIconColor }
+    func setPromptDismissIconVisibility (dismissIconVisibility : Bool) { promptDismissIconVisibility = dismissIconVisibility }
     func enableGesturesOnPrompt (gestureEnabler : Bool) { enablePromptGestures = gestureEnabler }
     
     // MARK: - Create The Prompt With A UIView Sublass
@@ -263,7 +277,7 @@ class SwiftPromptsView: UIView
         
         override func drawRect(rect: CGRect)
         {
-            SwiftPrompts.drawSwiftPrompt(frame: self.bounds, backgroundColor: masterClass.promptBackgroundColor, headerBarColor: masterClass.promptHeaderBarColor, bottomBarColor: masterClass.promptBottomBarColor, headerTxtColor: masterClass.promptHeaderTxtColor, contentTxtColor: masterClass.promptContentTxtColor, outlineColor: masterClass.promptOutlineColor, topLineColor: masterClass.promptTopLineColor, bottomLineColor: masterClass.promptBottomLineColor, promptText: masterClass.promptContentText, textSize: masterClass.promptContentTxtSize, topBarVisibility: masterClass.promptTopBarVisibility, bottomBarVisibility: masterClass.promptBottomBarVisibility, headerText: masterClass.promtHeader, headerSize: masterClass.promptHeaderTxtSize, topLineVisibility: masterClass.promptTopLineVisibility, bottomLineVisibility: masterClass.promptBottomLineVisibility, outlineVisibility: masterClass.promptOutlineVisibility)
+            SwiftPrompts.drawSwiftPrompt(frame: self.bounds, backgroundColor: masterClass.promptBackgroundColor, headerBarColor: masterClass.promptHeaderBarColor, bottomBarColor: masterClass.promptBottomBarColor, headerTxtColor: masterClass.promptHeaderTxtColor, contentTxtColor: masterClass.promptContentTxtColor, outlineColor: masterClass.promptOutlineColor, topLineColor: masterClass.promptTopLineColor, bottomLineColor: masterClass.promptBottomLineColor, dismissIconButton: masterClass.promptDismissIconColor, promptText: masterClass.promptContentText, textSize: masterClass.promptContentTxtSize, topBarVisibility: masterClass.promptTopBarVisibility, bottomBarVisibility: masterClass.promptBottomBarVisibility, headerText: masterClass.promtHeader, headerSize: masterClass.promptHeaderTxtSize, topLineVisibility: masterClass.promptTopLineVisibility, bottomLineVisibility: masterClass.promptBottomLineVisibility, outlineVisibility: masterClass.promptOutlineVisibility, dismissIconVisibility: masterClass.promptDismissIconVisibility)
         }
         
         func detectPan(recognizer:UIPanGestureRecognizer) {

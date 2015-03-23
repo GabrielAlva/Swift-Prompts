@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		646C5B2C1ABA6F54007AFF34 /* SwiftPrompts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646C5B2B1ABA6F54007AFF34 /* SwiftPrompts.swift */; };
+		643F4E7A1ABFCD4A00628843 /* SwiftPrompts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643F4E791ABFCD4A00628843 /* SwiftPrompts.swift */; };
 		6472B8FA1AB5F68500B4BA44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6472B8F91AB5F68500B4BA44 /* AppDelegate.swift */; };
 		6472B8FC1AB5F68500B4BA44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6472B8FB1AB5F68500B4BA44 /* ViewController.swift */; };
 		6472B8FF1AB5F68500B4BA44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6472B8FD1AB5F68500B4BA44 /* Main.storyboard */; };
@@ -29,7 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		646C5B2B1ABA6F54007AFF34 /* SwiftPrompts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPrompts.swift; sourceTree = "<group>"; };
+		643F4E791ABFCD4A00628843 /* SwiftPrompts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPrompts.swift; sourceTree = "<group>"; };
 		6472B8F41AB5F68500B4BA44 /* Swift-Prompts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Prompts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6472B8F81AB5F68500B4BA44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6472B8F91AB5F68500B4BA44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 		642E887A1AB7ED54002A7BF0 /* UI Assets */ = {
 			isa = PBXGroup;
 			children = (
-				646C5B2B1ABA6F54007AFF34 /* SwiftPrompts.swift */,
+				643F4E791ABFCD4A00628843 /* SwiftPrompts.swift */,
 			);
 			name = "UI Assets";
 			sourceTree = "<group>";
@@ -248,7 +248,7 @@
 				6472B91E1AB5F6FC00B4BA44 /* UIImageEffects.swift in Sources */,
 				6472B8FC1AB5F68500B4BA44 /* ViewController.swift in Sources */,
 				6472B91A1AB5F6B700B4BA44 /* SwiftPromptsView.swift in Sources */,
-				646C5B2C1ABA6F54007AFF34 /* SwiftPrompts.swift in Sources */,
+				643F4E7A1ABFCD4A00628843 /* SwiftPrompts.swift in Sources */,
 				6472B8FA1AB5F68500B4BA44 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
