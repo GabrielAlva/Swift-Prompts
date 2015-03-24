@@ -22,50 +22,51 @@ class SwiftPromptsView: UIView
     var delegate : SwiftPromptsProtocol?
     
     //Variables for the background view
-    var blurringLevel : CGFloat = 5.0
-    var colorWithTransparency = UIColor(red: 255.0, green: 255.0, blue: 255.0, alpha: 0.64)
-    var enableBlurring : Bool = true
-    var enableTransparencyWithColor : Bool = true
+    private var blurringLevel : CGFloat = 5.0
+    private var colorWithTransparency = UIColor(red: 255.0, green: 255.0, blue: 255.0, alpha: 0.64)
+    private var enableBlurring : Bool = true
+    private var enableTransparencyWithColor : Bool = true
     
     //Variables for the prompt with their default values
-    var promptHeight : CGFloat = 197.0
-    var promptWidth : CGFloat = 225.0
-    var promtHeader : String = "Success"
-    var promptHeaderTxtSize : CGFloat = 20.0
-    var promptContentText : String = "You have successfully posted this item to your Facebook wall."
-    var promptContentTxtSize : CGFloat = 18.0
-    var promptTopBarVisibility : Bool = false
-    var promptBottomBarVisibility : Bool = true
-    var promptTopLineVisibility : Bool = true
-    var promptBottomLineVisibility : Bool = false
-    var promptOutlineVisibility : Bool = false
-    var promptButtonDividerVisibility : Bool = true
-    var promptDismissIconVisibility : Bool = true
+    private var promptHeight : CGFloat = 197.0
+    private var promptWidth : CGFloat = 225.0
+    private var promtHeader : String = "Success"
+    private var promptHeaderTxtSize : CGFloat = 20.0
+    private var promptContentText : String = "You have successfully posted this item to your Facebook wall."
+    private var promptContentTxtSize : CGFloat = 18.0
+    private var promptTopBarVisibility : Bool = false
+    private var promptBottomBarVisibility : Bool = true
+    private var promptTopLineVisibility : Bool = true
+    private var promptBottomLineVisibility : Bool = false
+    private var promptOutlineVisibility : Bool = false
+    private var promptButtonDividerVisibility : Bool = true
+    private var promptDismissIconVisibility : Bool = false
     
     //Colors of the items within the prompt
-    var promptBackgroundColor : UIColor = UIColor.whiteColor()
-    var promptHeaderBarColor : UIColor = UIColor.clearColor()
-    var promptBottomBarColor : UIColor = UIColor(red: 34.0/255.0, green: 192.0/255.0, blue: 100.0/255.0, alpha: 1.0)
-    var promptHeaderTxtColor : UIColor = UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1.0)
-    var promptContentTxtColor : UIColor = UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1.0)
-    var promptOutlineColor : UIColor = UIColor.clearColor()
-    var promptTopLineColor : UIColor = UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1.0)
-    var promptBottomLineColor : UIColor = UIColor.clearColor()
-    var promptButtonDividerColor : UIColor = UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1.0)
-    var promptDismissIconColor : UIColor = UIColor.whiteColor()
+    private var promptBackgroundColor : UIColor = UIColor.whiteColor()
+    private var promptHeaderBarColor : UIColor = UIColor.clearColor()
+    private var promptBottomBarColor : UIColor = UIColor(red: 34.0/255.0, green: 192.0/255.0, blue: 100.0/255.0, alpha: 1.0)
+    private var promptHeaderTxtColor : UIColor = UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1.0)
+    private var promptContentTxtColor : UIColor = UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1.0)
+    private var promptOutlineColor : UIColor = UIColor.clearColor()
+    private var promptTopLineColor : UIColor = UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1.0)
+    private var promptBottomLineColor : UIColor = UIColor.clearColor()
+    private var promptButtonDividerColor : UIColor = UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1.0)
+    private var promptDismissIconColor : UIColor = UIColor.whiteColor()
     
     //Button panel vars
-    var enableDoubleButtons : Bool = false
-    var buttonText : String = "Post"
-    var secondButtonText : String = "Cancel"
-    var buttonColor : UIColor = UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1.0)
-    var secondButtonColor : UIColor = UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1.0)
+    private var enableDoubleButtons : Bool = false
+    private var mainButtonText : String = "Post"
+    private var secondButtonText : String = "Cancel"
+    private var mainButtonColor : UIColor = UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1.0)
+    private var secondButtonColor : UIColor = UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1.0)
     
     //Gesture enabling
-    var enablePromptGestures : Bool = true
+    private var enablePromptGestures : Bool = true
     
     //Declare the enum for use in the construction of the background switch
-    enum TypeOfBackground {
+    enum TypeOfBackground
+    {
         case LeveledBlurredWithTransparencyView
         case LightBlurredEffect
         case ExtraLightBlurredEffect
@@ -73,12 +74,14 @@ class SwiftPromptsView: UIView
     }
     var backgroundType = TypeOfBackground.LeveledBlurredWithTransparencyView
     
+    //Construct the prompt by overriding the view's drawRect
     override func drawRect(rect: CGRect)
     {
         var backgroundImage : UIImage = snapshot(self.superview)
         var effectImage : UIImage!
         var transparencyAndColorImageView : UIImageView!
         
+        //Construct the prompt's background
         switch backgroundType
         {
         case .LeveledBlurredWithTransparencyView:
@@ -120,9 +123,9 @@ class SwiftPromptsView: UIView
         {
             let button   = UIButton.buttonWithType(UIButtonType.System) as UIButton
             button.frame = CGRectMake(0, promptHeight-52, promptWidth, 41)
-            button.setTitleColor(buttonColor, forState: .Normal)
+            button.setTitleColor(mainButtonColor, forState: .Normal)
             button.titleLabel!.font = UIFont(name: "HelveticaNeue-Light", size: 20)
-            button.setTitle(buttonText, forState: UIControlState.Normal)
+            button.setTitle(mainButtonText, forState: UIControlState.Normal)
             button.tag = 1
             button.addTarget(self, action: "panelButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
     
@@ -139,9 +142,9 @@ class SwiftPromptsView: UIView
             
             let button   = UIButton.buttonWithType(UIButtonType.System) as UIButton
             button.frame = CGRectMake(promptWidth/2, promptHeight-52, promptWidth/2, 41)
-            button.setTitleColor(buttonColor, forState: .Normal)
+            button.setTitleColor(mainButtonColor, forState: .Normal)
             button.titleLabel!.font = UIFont(name: "HelveticaNeue-Light", size: 20)
-            button.setTitle(buttonText, forState: UIControlState.Normal)
+            button.setTitle(mainButtonText, forState: UIControlState.Normal)
             button.tag = 1
             button.addTarget(self, action: "panelButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
             
@@ -240,9 +243,9 @@ class SwiftPromptsView: UIView
     func setPromptTopLineColor (topLineColor : UIColor) { promptTopLineColor = topLineColor }
     func setPromptBottomLineColor (bottomLineColor : UIColor) { promptBottomLineColor = bottomLineColor }
     func enableDoubleButtonsOnPrompt () { enableDoubleButtons = true }
-    func setButtonText (buttonTitle : String) { buttonText = buttonTitle }
+    func setMainButtonText (buttonTitle : String) { mainButtonText = buttonTitle }
     func setSecondButtonText (secondButtonTitle : String) { secondButtonText = secondButtonTitle }
-    func setButtonColor (colorForButton : UIColor) { buttonColor = colorForButton }
+    func setMainButtonColor (colorForButton : UIColor) { mainButtonColor = colorForButton }
     func setSecondButtonColor (colorForSecondButton : UIColor) { secondButtonColor = colorForSecondButton }
     func setPromptButtonDividerColor (dividerColor : UIColor) { promptButtonDividerColor = dividerColor }
     func setPromptButtonDividerVisibility (dividerVisibility : Bool) { promptButtonDividerVisibility = dividerVisibility }
@@ -259,7 +262,9 @@ class SwiftPromptsView: UIView
         //Gesture Recognizer Vars
         var lastLocation:CGPoint = CGPointMake(0, 0)
         
-        init(master: SwiftPromptsView) {
+        init(master: SwiftPromptsView)
+        {
+            //Create a link to the parent class to access its vars and init with the prompts size
             masterClass = master
             var promptSize = CGRect(x: 0, y: 0, width: masterClass.promptWidth, height: masterClass.promptHeight)
             super.init(frame: promptSize)
@@ -271,16 +276,19 @@ class SwiftPromptsView: UIView
             }
         }
 
-        required init(coder aDecoder: NSCoder) {
+        required init(coder aDecoder: NSCoder)
+        {
             fatalError("init(coder:) has not been implemented")
         }
         
         override func drawRect(rect: CGRect)
         {
+            //Call to the SwiftPrompts drawSwiftPrompt func, this handles the drawing of the prompt
             SwiftPrompts.drawSwiftPrompt(frame: self.bounds, backgroundColor: masterClass.promptBackgroundColor, headerBarColor: masterClass.promptHeaderBarColor, bottomBarColor: masterClass.promptBottomBarColor, headerTxtColor: masterClass.promptHeaderTxtColor, contentTxtColor: masterClass.promptContentTxtColor, outlineColor: masterClass.promptOutlineColor, topLineColor: masterClass.promptTopLineColor, bottomLineColor: masterClass.promptBottomLineColor, dismissIconButton: masterClass.promptDismissIconColor, promptText: masterClass.promptContentText, textSize: masterClass.promptContentTxtSize, topBarVisibility: masterClass.promptTopBarVisibility, bottomBarVisibility: masterClass.promptBottomBarVisibility, headerText: masterClass.promtHeader, headerSize: masterClass.promptHeaderTxtSize, topLineVisibility: masterClass.promptTopLineVisibility, bottomLineVisibility: masterClass.promptBottomLineVisibility, outlineVisibility: masterClass.promptOutlineVisibility, dismissIconVisibility: masterClass.promptDismissIconVisibility)
         }
         
-        func detectPan(recognizer:UIPanGestureRecognizer) {
+        func detectPan(recognizer:UIPanGestureRecognizer)
+        {
             var translation  = recognizer.translationInView(self)
             self.center = CGPointMake(lastLocation.x + translation.x, lastLocation.y + translation.y)
             
@@ -288,6 +296,7 @@ class SwiftPromptsView: UIView
             var horizontalDistanceFromCenter : CGFloat = fabs(translation.x)
             var shouldDismissPrompt : Bool = false
             
+            //Dim the prompt accordingly to the specified radius
             if (verticalDistanceFromCenter < 100.0) {
                 var radiusAlphaLevel : CGFloat = 1.0 - verticalDistanceFromCenter/100
                 self.alpha = radiusAlphaLevel
@@ -299,7 +308,9 @@ class SwiftPromptsView: UIView
                 shouldDismissPrompt = true
             }
             
-            if (recognizer.state == UIGestureRecognizerState.Ended) {
+            //Handle the end of the pan gesture
+            if (recognizer.state == UIGestureRecognizerState.Ended)
+            {
                 if (shouldDismissPrompt == true) {
                     UIView.animateWithDuration(0.6, animations: {
                         self.layer.opacity = 0.0
@@ -310,7 +321,8 @@ class SwiftPromptsView: UIView
                             self.removeFromSuperview()
                             self.masterClass.removeFromSuperview()
                     })
-                } else {
+                } else
+                {
                     UIView.animateWithDuration(0.3, animations: {
                         self.center = self.masterClass.center
                         self.alpha = 1.0
