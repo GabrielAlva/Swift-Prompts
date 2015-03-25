@@ -99,7 +99,33 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
         self.view.addSubview(prompt)
     }
     
-    @IBAction func instagramPrompt(sender: UIButton) {
+    @IBAction func instagramPrompt(sender: UIButton)
+    {
+        //Create an instance of SwiftPromptsView and assign its delegate
+        prompt = SwiftPromptsView(frame: self.view.bounds)
+        prompt.delegate = self
+        
+        //Set the properties for the background
+        prompt.enableDarkEffectView()
+        
+        //Set the properties of the promt
+        prompt.setPromtHeader("Intagram")
+        prompt.setPromptContentText("Would you like to post this photo to Instagram?")
+        prompt.setPromptDismissIconVisibility(true)
+        prompt.setPromptTopLineVisibility(false)
+        prompt.setPromptBottomLineVisibility(true)
+        prompt.setPromptTopBarVisibility(true)
+        prompt.setPromptBottomBarVisibility(false)
+        prompt.setPromptOutlineVisibility(true)
+        prompt.setPromptHeaderBarColor(UIColor(red: 177.0/255.0, green: 109.0/255.0, blue: 68.0/255.0, alpha: 1.0))
+        prompt.setPromptHeaderTxtColor(UIColor(red: 255.0/255.0, green: 253.0/255.0, blue: 195.0/255.0, alpha: 1.0))
+        prompt.setPromptDismissIconColor(UIColor(red: 255.0/255.0, green: 253.0/255.0, blue: 195.0/255.0, alpha: 1.0))
+        prompt.setPromptOutlineColor(UIColor(red: 177.0/255.0, green: 109.0/255.0, blue: 68.0/255.0, alpha: 1.0))
+        prompt.setPromptBackgroundColor(UIColor(red: 255.0/255.0, green: 253.0/255.0, blue: 195.0/255.0, alpha: 1.0))
+        prompt.setMainButtonColor(UIColor(red: 177.0/255.0, green: 109.0/255.0, blue: 68.0/255.0, alpha: 1.0))
+        prompt.setPromptBottomLineColor(UIColor(red: 177.0/255.0, green: 109.0/255.0, blue: 68.0/255.0, alpha: 1.0))
+        
+        self.view.addSubview(prompt)
     }
     
     @IBAction func deletePrompt(sender: UIButton)
@@ -138,6 +164,7 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
     
     func clickedOnTheMainButton() {
         println("Clicked on the main button")
+        prompt.dismissPrompt()
     }
     
     func clickedOnTheSecondButton() {
@@ -147,7 +174,7 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
     }
     
     func promptWasDismissed() {
-        println("Dismissed view")
+        println("Dismissed the prompt")
     }
     
     override func didReceiveMemoryWarning() {
