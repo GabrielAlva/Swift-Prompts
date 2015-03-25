@@ -134,7 +134,7 @@ class SwiftPromptsView: UIView
         else
         {
             if (promptButtonDividerVisibility) {
-                var divider = UIView(frame: CGRectMake(promptWidth/2, promptHeight-47, 1, 31))
+                var divider = UIView(frame: CGRectMake(promptWidth/2, promptHeight-47, 0.5, 31))
                 divider.backgroundColor = promptButtonDividerColor
                 
                 swiftPrompt.addSubview(divider)

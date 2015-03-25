@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		643F4E7A1ABFCD4A00628843 /* SwiftPrompts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643F4E791ABFCD4A00628843 /* SwiftPrompts.swift */; };
 		6472B8FA1AB5F68500B4BA44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6472B8F91AB5F68500B4BA44 /* AppDelegate.swift */; };
-		6472B8FC1AB5F68500B4BA44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6472B8FB1AB5F68500B4BA44 /* ViewController.swift */; };
+		6472B8FC1AB5F68500B4BA44 /* SwiftPromptsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6472B8FB1AB5F68500B4BA44 /* SwiftPromptsVC.swift */; };
 		6472B8FF1AB5F68500B4BA44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6472B8FD1AB5F68500B4BA44 /* Main.storyboard */; };
 		6472B9011AB5F68500B4BA44 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6472B9001AB5F68500B4BA44 /* Images.xcassets */; };
 		6472B9041AB5F68500B4BA44 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6472B9021AB5F68500B4BA44 /* LaunchScreen.xib */; };
@@ -33,7 +33,7 @@
 		6472B8F41AB5F68500B4BA44 /* Swift-Prompts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Prompts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6472B8F81AB5F68500B4BA44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6472B8F91AB5F68500B4BA44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6472B8FB1AB5F68500B4BA44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6472B8FB1AB5F68500B4BA44 /* SwiftPromptsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftPromptsVC.swift; sourceTree = "<group>"; };
 		6472B8FE1AB5F68500B4BA44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6472B9001AB5F68500B4BA44 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6472B9031AB5F68500B4BA44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 				6472B91C1AB5F6E600B4BA44 /* Swift Prompts View */,
 				6472B91B1AB5F6CB00B4BA44 /* Swift UIImage Category */,
 				6472B8F91AB5F68500B4BA44 /* AppDelegate.swift */,
-				6472B8FB1AB5F68500B4BA44 /* ViewController.swift */,
+				6472B8FB1AB5F68500B4BA44 /* SwiftPromptsVC.swift */,
 				6472B8FD1AB5F68500B4BA44 /* Main.storyboard */,
 				6472B9001AB5F68500B4BA44 /* Images.xcassets */,
 				6472B9021AB5F68500B4BA44 /* LaunchScreen.xib */,
@@ -246,7 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6472B91E1AB5F6FC00B4BA44 /* UIImageEffects.swift in Sources */,
-				6472B8FC1AB5F68500B4BA44 /* ViewController.swift in Sources */,
+				6472B8FC1AB5F68500B4BA44 /* SwiftPromptsVC.swift in Sources */,
 				6472B91A1AB5F6B700B4BA44 /* SwiftPromptsView.swift in Sources */,
 				643F4E7A1ABFCD4A00628843 /* SwiftPrompts.swift in Sources */,
 				6472B8FA1AB5F68500B4BA44 /* AppDelegate.swift in Sources */,
