@@ -62,14 +62,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		642E887A1AB7ED54002A7BF0 /* UI Assets */ = {
-			isa = PBXGroup;
-			children = (
-				643F4E791ABFCD4A00628843 /* SwiftPrompts.swift */,
-			);
-			name = "UI Assets";
-			sourceTree = "<group>";
-		};
 		6472B8EB1AB5F68500B4BA44 = {
 			isa = PBXGroup;
 			children = (
@@ -91,9 +83,7 @@
 		6472B8F61AB5F68500B4BA44 /* Swift-Prompts */ = {
 			isa = PBXGroup;
 			children = (
-				642E887A1AB7ED54002A7BF0 /* UI Assets */,
-				6472B91C1AB5F6E600B4BA44 /* Swift Prompts View */,
-				6472B91B1AB5F6CB00B4BA44 /* Swift UIImage Category */,
+				6472B91C1AB5F6E600B4BA44 /* Swift Prompts */,
 				6472B8F91AB5F68500B4BA44 /* AppDelegate.swift */,
 				6472B8FB1AB5F68500B4BA44 /* SwiftPromptsVC.swift */,
 				6472B8FD1AB5F68500B4BA44 /* Main.storyboard */,
@@ -129,20 +119,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6472B91B1AB5F6CB00B4BA44 /* Swift UIImage Category */ = {
-			isa = PBXGroup;
-			children = (
-				6472B91D1AB5F6FC00B4BA44 /* UIImageEffects.swift */,
-			);
-			name = "Swift UIImage Category";
-			sourceTree = "<group>";
-		};
-		6472B91C1AB5F6E600B4BA44 /* Swift Prompts View */ = {
+		6472B91C1AB5F6E600B4BA44 /* Swift Prompts */ = {
 			isa = PBXGroup;
 			children = (
 				6472B9191AB5F6B700B4BA44 /* SwiftPromptsView.swift */,
+				643F4E791ABFCD4A00628843 /* SwiftPrompts.swift */,
+				6472B91D1AB5F6FC00B4BA44 /* UIImageEffects.swift */,
 			);
-			name = "Swift Prompts View";
+			name = "Swift Prompts";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
