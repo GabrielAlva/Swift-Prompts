@@ -2,8 +2,7 @@
 ![License](https://img.shields.io/badge/Language-Swift-orange.svg)
 ![Level](https://img.shields.io/badge/License-MIT-brightgreen.svg)
 
-![Swift Prompts.](https://raw.githubusercontent.com/GabrielAlva/Swift-Prompts/master/MarkdownImage.png?token=ABnwGbMhqJekUeg1ULK-V2hzBXOMLDQZks5VIy1hwA%3D%3D)
-<br />
+![Swift Prompts.](https://raw.githubusercontent.com/GabrielAlva/Swift-Prompts/master/MarkdownImage.png)
 <br />
 <br />
 
