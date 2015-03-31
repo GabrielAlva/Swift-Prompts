@@ -2,7 +2,7 @@
 ![License](https://img.shields.io/badge/Language-Swift-orange.svg)
 ![Level](https://img.shields.io/badge/License-MIT-brightgreen.svg)
 
-![Custom Camera.](https://raw.githubusercontent.com/GabrielAlva/Swift-Prompts/master/MarkdownImage.png)
+![Swift Prompts.](https://raw.githubusercontent.com/GabrielAlva/Swift-Prompts/master/MarkdownImage.png?token=ABnwGbMhqJekUeg1ULK-V2hzBXOMLDQZks5VIy1hwA%3D%3D)
 <br />
 <br />
 <br />
@@ -53,7 +53,7 @@ To dismiss the prompt, you can write this line in one of the delegate functions 
 ```swift
 prompt.dismissPrompt()
 ```
-Alternatively, the dismissal by gesture is enabled by default so you can dismiss a prompt by moving it up or down until it dims completely. Dismissal by gesture will trigger `the promptWasDismissed()` delegate function.
+Alternatively, the dismissal by gesture is enabled by default so you can dismiss a prompt by moving it up or down until it dims completely. Dismissal by gesture will trigger the `promptWasDismissed()` delegate function.
 
 ##Customization
 
