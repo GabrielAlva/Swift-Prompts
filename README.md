@@ -56,7 +56,7 @@ Alternatively, the dismissal by gesture is enabled by default so you can dismiss
 
 ##Customization
 
-Once you have your assigned the frame and delegate, you can customize the look and feel of your prompt and its background. You can customize almost every aspect of it as shown above. The demo app is well documented for you to use any function of the customization API. To see the full list you can navigate to the `SwiftPromptsView` class and look for the API pragma mark. 
+Once you have your assigned the frame and delegate, you can customize the look and feel of your prompt and its background. You can customize almost every aspect of it as shown above including the width and height. The demo app is well documented for you to use any function of the customization API. To see the full list you can navigate to the `SwiftPromptsView` class and look for the API pragma mark. 
 
 ##Example
 
