@@ -156,6 +156,16 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
         self.view.addSubview(prompt)
     }
     
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
+    
+    override func supportedInterfaceOrientations() -> Int {
+        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+    }
+    
+    // MARK: - Delegate functions for the prompt
+    
     func clickedOnTheMainButton() {
         println("Clicked on the main button")
         prompt.dismissPrompt()
