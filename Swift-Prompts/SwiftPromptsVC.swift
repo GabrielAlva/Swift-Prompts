@@ -20,7 +20,6 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
         //Set the background view image
         backgroundImageView.image = UIImage(named: "Alps")
         backgroundImageView.contentMode = .ScaleAspectFill
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "rotated", name: UIDeviceOrientationDidChangeNotification, object: nil)
     }
 
     @IBAction func facebookPrompt(sender: UIButton)
@@ -155,11 +154,6 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
         prompt.setMainButtonText("Delete")
         
         self.view.addSubview(prompt)
-    }
-    
-    func rotated()
-    {
-        prompt.removeFromSuperview()
     }
     
     func clickedOnTheMainButton() {
