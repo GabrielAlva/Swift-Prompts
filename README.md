@@ -1,4 +1,4 @@
-![Platform](https://img.shields.io/badge/Platform-iOS-blue.svg)
+![Platform](https://img.shields.io/badge/Platform-iOS-lightgrey.svg?style=flat)
 ![License](https://img.shields.io/badge/Language-Swift-orange.svg)
 ![Level](https://img.shields.io/badge/License-MIT-brightgreen.svg)
 
