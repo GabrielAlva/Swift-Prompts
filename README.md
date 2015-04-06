@@ -1,6 +1,6 @@
 ![Platform](https://img.shields.io/badge/Platform-iOS-lightgrey.svg?style=flat)
-![License](https://img.shields.io/badge/Language-Swift-orange.svg)
-![Level](https://img.shields.io/badge/License-MIT-brightgreen.svg)
+![License](https://img.shields.io/badge/Language-Swift-red.svg?style=flat)
+![Level](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)
 
 ![Swift Prompts.](https://raw.githubusercontent.com/GabrielAlva/Swift-Prompts/master/MarkdownImage.png)
 <br />
