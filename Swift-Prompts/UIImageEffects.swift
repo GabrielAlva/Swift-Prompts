@@ -167,8 +167,8 @@ public extension UIImage {
         if hasBlur || hasSaturationChange {
             func createEffectBuffer(context: CGContext) -> vImage_Buffer {
                 let data = CGBitmapContextGetData(context)
-                let width = CGBitmapContextGetWidth(context)
-                let height = CGBitmapContextGetHeight(context)
+                let width = UInt(CGBitmapContextGetWidth(context))
+                let height = UInt(CGBitmapContextGetHeight(context))
                 let rowBytes = CGBitmapContextGetBytesPerRow(context)
                 
                 return vImage_Buffer(data: data, height: height, width: width, rowBytes: rowBytes)

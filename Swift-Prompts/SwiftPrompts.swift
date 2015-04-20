@@ -46,7 +46,7 @@ public class SwiftPrompts : NSObject {
 
         //// Text Drawing
         let textRect = CGRectMake(frame.minX + 13, frame.minY + 56, frame.width - 26, frame.height - 109)
-        let textStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as NSMutableParagraphStyle
+        let textStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
         textStyle.alignment = NSTextAlignment.Center
 
         let textFontAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: textSize)!, NSForegroundColorAttributeName: contentTxtColor, NSParagraphStyleAttributeName: textStyle]
@@ -69,7 +69,7 @@ public class SwiftPrompts : NSObject {
 
         //// Text 2 Drawing
         let text2Rect = CGRectMake(frame.minX + floor(frame.width * 0.05333 + 0.5), frame.minY + 17, floor(frame.width * 0.93778 + 0.5) - floor(frame.width * 0.05333 + 0.5), 34)
-        let text2Style = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as NSMutableParagraphStyle
+        let text2Style = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
         text2Style.alignment = NSTextAlignment.Center
 
         let text2FontAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: headerSize)!, NSForegroundColorAttributeName: headerTxtColor, NSParagraphStyleAttributeName: text2Style]

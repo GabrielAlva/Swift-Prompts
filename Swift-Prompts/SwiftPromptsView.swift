@@ -121,7 +121,7 @@ class SwiftPromptsView: UIView
         //Add the button(s) on the bottom of the prompt
         if (enableDoubleButtons == false)
         {
-            let button   = UIButton.buttonWithType(UIButtonType.System) as UIButton
+            let button   = UIButton.buttonWithType(UIButtonType.System) as! UIButton
             button.frame = CGRectMake(0, promptHeight-52, promptWidth, 41)
             button.setTitleColor(mainButtonColor, forState: .Normal)
             button.titleLabel!.font = UIFont(name: "HelveticaNeue-Light", size: 20)
@@ -140,7 +140,7 @@ class SwiftPromptsView: UIView
                 swiftPrompt.addSubview(divider)
             }
             
-            let button   = UIButton.buttonWithType(UIButtonType.System) as UIButton
+            let button   = UIButton.buttonWithType(UIButtonType.System) as! UIButton
             button.frame = CGRectMake(promptWidth/2, promptHeight-52, promptWidth/2, 41)
             button.setTitleColor(mainButtonColor, forState: .Normal)
             button.titleLabel!.font = UIFont(name: "HelveticaNeue-Light", size: 20)
@@ -150,7 +150,7 @@ class SwiftPromptsView: UIView
             
             swiftPrompt.addSubview(button)
             
-            let secondButton   = UIButton.buttonWithType(UIButtonType.System) as UIButton
+            let secondButton   = UIButton.buttonWithType(UIButtonType.System) as! UIButton
             secondButton.frame = CGRectMake(0, promptHeight-52, promptWidth/2, 41)
             secondButton.setTitleColor(secondButtonColor, forState: .Normal)
             secondButton.titleLabel!.font = UIFont(name: "HelveticaNeue-Light", size: 20)
@@ -164,7 +164,7 @@ class SwiftPromptsView: UIView
         //Add the top dismiss button if enabled
         if (promptDismissIconVisibility)
         {
-            let dismissButton   = UIButton.buttonWithType(UIButtonType.System) as UIButton
+            let dismissButton   = UIButton.buttonWithType(UIButtonType.System) as! UIButton
             dismissButton.frame = CGRectMake(5, 17, 35, 35)
             dismissButton.addTarget(self, action: "dismissPrompt", forControlEvents: UIControlEvents.TouchUpInside)
             
@@ -332,7 +332,7 @@ class SwiftPromptsView: UIView
             }
         }
         
-        override func touchesBegan(touches: NSSet, withEvent event: UIEvent)
+        override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent)
         {
             // Remember original location
             lastLocation = self.center
