@@ -289,6 +289,9 @@ class SwiftPromptsView: UIView
         
         func detectPan(recognizer:UIPanGestureRecognizer)
         {
+            if lastLocation==CGPointZero{
+                lastLocation = self.center
+            }
             var translation  = recognizer.translationInView(self)
             self.center = CGPointMake(lastLocation.x + translation.x, lastLocation.y + translation.y)
             
