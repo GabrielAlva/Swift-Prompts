@@ -32,8 +32,8 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
         prompt.setBlurringLevel(2.0)
         prompt.setColorWithTransparency(UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.64))
         
-        //Set the properties of the promt
-        prompt.setPromtHeader("Facebook")
+        //Set the properties of the prompt
+        prompt.setPromptHeader("Facebook")
         prompt.setPromptTopBarVisibility(true)
         prompt.setPromptBottomBarVisibility(false)
         prompt.setPromptTopLineVisibility(false)
@@ -56,8 +56,8 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
         //Set the properties for the background
         prompt.setColorWithTransparency(UIColor.clearColor())
         
-        //Set the properties of the promt
-        prompt.setPromtHeader("WhatsApp")
+        //Set the properties of the prompt
+        prompt.setPromptHeader("WhatsApp")
         prompt.setPromptContentText("Would you like to send this image through WhatsApp?")
         prompt.setPromptTopBarVisibility(true)
         prompt.setPromptBottomBarVisibility(false)
@@ -83,8 +83,8 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
         //Set the properties for the background
         prompt.enableLightEffectView()
         
-        //Set the properties of the promt
-        prompt.setPromtHeader("Success")
+        //Set the properties of the prompt
+        prompt.setPromptHeader("Success")
         prompt.setPromptContentText("The photo was successfully saved to your camera roll and your media library.")
         prompt.setPromptTopLineVisibility(true)
         prompt.setPromptBottomLineVisibility(false)
@@ -107,8 +107,8 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
         //Set the properties for the background
         prompt.enableDarkEffectView()
         
-        //Set the properties of the promt
-        prompt.setPromtHeader("Intagram")
+        //Set the properties of the prompt
+        prompt.setPromptHeader("Intagram")
         prompt.setPromptContentText("Would you like to post this photo to Instagram?")
         prompt.setPromptDismissIconVisibility(true)
         prompt.setPromptTopLineVisibility(false)
@@ -136,8 +136,8 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
         //Set the properties for the background
         prompt.enableExtraLightEffectView()
         
-        //Set the properties of the promt
-        prompt.setPromtHeader("Delete")
+        //Set the properties of the prompt
+        prompt.setPromptHeader("Delete")
         prompt.setPromptContentText("Would you like to remove this item permanently from your library?")
         prompt.setPromptTopLineVisibility(true)
         prompt.setPromptBottomLineVisibility(false)
