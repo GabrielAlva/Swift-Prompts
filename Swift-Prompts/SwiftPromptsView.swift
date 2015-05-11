@@ -30,7 +30,7 @@ class SwiftPromptsView: UIView
     //Variables for the prompt with their default values
     private var promptHeight : CGFloat = 197.0
     private var promptWidth : CGFloat = 225.0
-    private var promtHeader : String = "Success"
+    private var promptHeader : String = "Success"
     private var promptHeaderTxtSize : CGFloat = 20.0
     private var promptContentText : String = "You have successfully posted this item to your Facebook wall."
     private var promptContentTxtSize : CGFloat = 18.0
@@ -225,7 +225,7 @@ class SwiftPromptsView: UIView
     // MARK: - API Functions For The Prompt
     func setPromptHeight (height : CGFloat) { promptHeight = height }
     func setPromptWidth (width : CGFloat) { promptWidth = width }
-    func setPromtHeader (header : String) { promtHeader = header }
+    func setPromptHeader (header : String) { promptHeader = header }
     func setPromptHeaderTxtSize (headerTxtSize : CGFloat) { promptHeaderTxtSize = headerTxtSize }
     func setPromptContentText (contentTxt : String) { promptContentText = contentTxt }
     func setPromptContentTxtSize (contentTxtSize : CGFloat) { promptContentTxtSize = contentTxtSize }
@@ -284,7 +284,7 @@ class SwiftPromptsView: UIView
         override func drawRect(rect: CGRect)
         {
             //Call to the SwiftPrompts drawSwiftPrompt func, this handles the drawing of the prompt
-            SwiftPrompts.drawSwiftPrompt(frame: self.bounds, backgroundColor: masterClass.promptBackgroundColor, headerBarColor: masterClass.promptHeaderBarColor, bottomBarColor: masterClass.promptBottomBarColor, headerTxtColor: masterClass.promptHeaderTxtColor, contentTxtColor: masterClass.promptContentTxtColor, outlineColor: masterClass.promptOutlineColor, topLineColor: masterClass.promptTopLineColor, bottomLineColor: masterClass.promptBottomLineColor, dismissIconButton: masterClass.promptDismissIconColor, promptText: masterClass.promptContentText, textSize: masterClass.promptContentTxtSize, topBarVisibility: masterClass.promptTopBarVisibility, bottomBarVisibility: masterClass.promptBottomBarVisibility, headerText: masterClass.promtHeader, headerSize: masterClass.promptHeaderTxtSize, topLineVisibility: masterClass.promptTopLineVisibility, bottomLineVisibility: masterClass.promptBottomLineVisibility, outlineVisibility: masterClass.promptOutlineVisibility, dismissIconVisibility: masterClass.promptDismissIconVisibility)
+            SwiftPrompts.drawSwiftPrompt(frame: self.bounds, backgroundColor: masterClass.promptBackgroundColor, headerBarColor: masterClass.promptHeaderBarColor, bottomBarColor: masterClass.promptBottomBarColor, headerTxtColor: masterClass.promptHeaderTxtColor, contentTxtColor: masterClass.promptContentTxtColor, outlineColor: masterClass.promptOutlineColor, topLineColor: masterClass.promptTopLineColor, bottomLineColor: masterClass.promptBottomLineColor, dismissIconButton: masterClass.promptDismissIconColor, promptText: masterClass.promptContentText, textSize: masterClass.promptContentTxtSize, topBarVisibility: masterClass.promptTopBarVisibility, bottomBarVisibility: masterClass.promptBottomBarVisibility, headerText: masterClass.promptHeader, headerSize: masterClass.promptHeaderTxtSize, topLineVisibility: masterClass.promptTopLineVisibility, bottomLineVisibility: masterClass.promptBottomLineVisibility, outlineVisibility: masterClass.promptOutlineVisibility, dismissIconVisibility: masterClass.promptDismissIconVisibility)
         }
         
         func detectPan(recognizer:UIPanGestureRecognizer)
