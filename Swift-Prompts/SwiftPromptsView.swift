@@ -9,17 +9,17 @@
 import Foundation
 import UIKit
 
-@objc protocol SwiftPromptsProtocol
+@objc public protocol SwiftPromptsProtocol
 {
     optional func clickedOnTheMainButton()
     optional func clickedOnTheSecondButton()
     optional func promptWasDismissed()
 }
 
-class SwiftPromptsView: UIView
+public class SwiftPromptsView: UIView
 {
     //Delegate var
-    var delegate : SwiftPromptsProtocol?
+    public var delegate : SwiftPromptsProtocol?
     
     //Variables for the background view
     private var blurringLevel : CGFloat = 5.0
@@ -72,10 +72,10 @@ class SwiftPromptsView: UIView
         case ExtraLightBlurredEffect
         case DarkBlurredEffect
     }
-    var backgroundType = TypeOfBackground.LeveledBlurredWithTransparencyView
+    private var backgroundType = TypeOfBackground.LeveledBlurredWithTransparencyView
     
     //Construct the prompt by overriding the view's drawRect
-    override func drawRect(rect: CGRect)
+    override public func drawRect(rect: CGRect)
     {
         var backgroundImage : UIImage = snapshot(self.superview)
         var effectImage : UIImage!
@@ -214,43 +214,43 @@ class SwiftPromptsView: UIView
     }
     
     // MARK: - API Functions For The Background
-    func setBlurringLevel(level: CGFloat) { blurringLevel = level }
-    func setColorWithTransparency(color: UIColor) { colorWithTransparency = color }
-    func enableBlurringView (enabler : Bool) { enableBlurring = enabler; backgroundType = TypeOfBackground.LeveledBlurredWithTransparencyView; }
-    func enableTransparencyWithColorView (enabler : Bool) { enableTransparencyWithColor = enabler; backgroundType = TypeOfBackground.LeveledBlurredWithTransparencyView; }
-    func enableLightEffectView () { backgroundType = TypeOfBackground.LightBlurredEffect }
-    func enableExtraLightEffectView () { backgroundType = TypeOfBackground.ExtraLightBlurredEffect }
-    func enableDarkEffectView () { backgroundType = TypeOfBackground.DarkBlurredEffect }
+    public func setBlurringLevel(level: CGFloat) { blurringLevel = level }
+    public func setColorWithTransparency(color: UIColor) { colorWithTransparency = color }
+    public func enableBlurringView (enabler : Bool) { enableBlurring = enabler; backgroundType = TypeOfBackground.LeveledBlurredWithTransparencyView; }
+    public func enableTransparencyWithColorView (enabler : Bool) { enableTransparencyWithColor = enabler; backgroundType = TypeOfBackground.LeveledBlurredWithTransparencyView; }
+    public func enableLightEffectView () { backgroundType = TypeOfBackground.LightBlurredEffect }
+    public func enableExtraLightEffectView () { backgroundType = TypeOfBackground.ExtraLightBlurredEffect }
+    public func enableDarkEffectView () { backgroundType = TypeOfBackground.DarkBlurredEffect }
     
     // MARK: - API Functions For The Prompt
-    func setPromptHeight (height : CGFloat) { promptHeight = height }
-    func setPromptWidth (width : CGFloat) { promptWidth = width }
-    func setPromptHeader (header : String) { promptHeader = header }
-    func setPromptHeaderTxtSize (headerTxtSize : CGFloat) { promptHeaderTxtSize = headerTxtSize }
-    func setPromptContentText (contentTxt : String) { promptContentText = contentTxt }
-    func setPromptContentTxtSize (contentTxtSize : CGFloat) { promptContentTxtSize = contentTxtSize }
-    func setPromptTopBarVisibility (topBarVisibility : Bool) { promptTopBarVisibility = topBarVisibility }
-    func setPromptBottomBarVisibility (bottomBarVisibility : Bool) { promptBottomBarVisibility = bottomBarVisibility }
-    func setPromptTopLineVisibility (topLineVisibility : Bool) { promptTopLineVisibility = topLineVisibility }
-    func setPromptBottomLineVisibility (bottomLineVisibility : Bool) { promptBottomLineVisibility = bottomLineVisibility }
-    func setPromptOutlineVisibility (outlineVisibility: Bool) { promptOutlineVisibility = outlineVisibility }
-    func setPromptBackgroundColor (backgroundColor : UIColor) { promptBackgroundColor = backgroundColor }
-    func setPromptHeaderBarColor (headerBarColor : UIColor) { promptHeaderBarColor = headerBarColor }
-    func setPromptBottomBarColor (bottomBarColor : UIColor) { promptBottomBarColor = bottomBarColor }
-    func setPromptHeaderTxtColor (headerTxtColor  : UIColor) { promptHeaderTxtColor =  headerTxtColor}
-    func setPromptContentTxtColor (contentTxtColor : UIColor) { promptContentTxtColor = contentTxtColor }
-    func setPromptOutlineColor (outlineColor : UIColor) { promptOutlineColor = outlineColor }
-    func setPromptTopLineColor (topLineColor : UIColor) { promptTopLineColor = topLineColor }
-    func setPromptBottomLineColor (bottomLineColor : UIColor) { promptBottomLineColor = bottomLineColor }
-    func enableDoubleButtonsOnPrompt () { enableDoubleButtons = true }
-    func setMainButtonText (buttonTitle : String) { mainButtonText = buttonTitle }
-    func setSecondButtonText (secondButtonTitle : String) { secondButtonText = secondButtonTitle }
-    func setMainButtonColor (colorForButton : UIColor) { mainButtonColor = colorForButton }
-    func setSecondButtonColor (colorForSecondButton : UIColor) { secondButtonColor = colorForSecondButton }
-    func setPromptButtonDividerColor (dividerColor : UIColor) { promptButtonDividerColor = dividerColor }
-    func setPromptButtonDividerVisibility (dividerVisibility : Bool) { promptButtonDividerVisibility = dividerVisibility }
-    func setPromptDismissIconColor (dismissIconColor : UIColor) { promptDismissIconColor = dismissIconColor }
-    func setPromptDismissIconVisibility (dismissIconVisibility : Bool) { promptDismissIconVisibility = dismissIconVisibility }
+    public func setPromptHeight (height : CGFloat) { promptHeight = height }
+    public func setPromptWidth (width : CGFloat) { promptWidth = width }
+    public func setPromptHeader (header : String) { promptHeader = header }
+    public func setPromptHeaderTxtSize (headerTxtSize : CGFloat) { promptHeaderTxtSize = headerTxtSize }
+    public func setPromptContentText (contentTxt : String) { promptContentText = contentTxt }
+    public func setPromptContentTxtSize (contentTxtSize : CGFloat) { promptContentTxtSize = contentTxtSize }
+    public func setPromptTopBarVisibility (topBarVisibility : Bool) { promptTopBarVisibility = topBarVisibility }
+    public func setPromptBottomBarVisibility (bottomBarVisibility : Bool) { promptBottomBarVisibility = bottomBarVisibility }
+    public func setPromptTopLineVisibility (topLineVisibility : Bool) { promptTopLineVisibility = topLineVisibility }
+    public func setPromptBottomLineVisibility (bottomLineVisibility : Bool) { promptBottomLineVisibility = bottomLineVisibility }
+    public func setPromptOutlineVisibility (outlineVisibility: Bool) { promptOutlineVisibility = outlineVisibility }
+    public func setPromptBackgroundColor (backgroundColor : UIColor) { promptBackgroundColor = backgroundColor }
+    public func setPromptHeaderBarColor (headerBarColor : UIColor) { promptHeaderBarColor = headerBarColor }
+    public func setPromptBottomBarColor (bottomBarColor : UIColor) { promptBottomBarColor = bottomBarColor }
+    public func setPromptHeaderTxtColor (headerTxtColor  : UIColor) { promptHeaderTxtColor =  headerTxtColor}
+    public func setPromptContentTxtColor (contentTxtColor : UIColor) { promptContentTxtColor = contentTxtColor }
+    public func setPromptOutlineColor (outlineColor : UIColor) { promptOutlineColor = outlineColor }
+    public func setPromptTopLineColor (topLineColor : UIColor) { promptTopLineColor = topLineColor }
+    public func setPromptBottomLineColor (bottomLineColor : UIColor) { promptBottomLineColor = bottomLineColor }
+    public func enableDoubleButtonsOnPrompt () { enableDoubleButtons = true }
+    public func setMainButtonText (buttonTitle : String) { mainButtonText = buttonTitle }
+    public func setSecondButtonText (secondButtonTitle : String) { secondButtonText = secondButtonTitle }
+    public func setMainButtonColor (colorForButton : UIColor) { mainButtonColor = colorForButton }
+    public func setSecondButtonColor (colorForSecondButton : UIColor) { secondButtonColor = colorForSecondButton }
+    public func setPromptButtonDividerColor (dividerColor : UIColor) { promptButtonDividerColor = dividerColor }
+    public func setPromptButtonDividerVisibility (dividerVisibility : Bool) { promptButtonDividerVisibility = dividerVisibility }
+    public func setPromptDismissIconColor (dismissIconColor : UIColor) { promptDismissIconColor = dismissIconColor }
+    public func setPromptDismissIconVisibility (dismissIconVisibility : Bool) { promptDismissIconVisibility = dismissIconVisibility }
     func enableGesturesOnPrompt (gestureEnabler : Bool) { enablePromptGestures = gestureEnabler }
     
     // MARK: - Create The Prompt With A UIView Sublass
