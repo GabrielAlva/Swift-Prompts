@@ -11,17 +11,17 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>09C5C0715506BB049CCA8345F95033A47903ECE3</key>
-		<string>https://github.com/GabrielAlva/Swift-Prompts.git</string>
+		<string>https://github.com/hons82/Swift-Prompts.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Swift-Prompts.xcodeproj</string>
+	<string>Swift-Prompts-Demo/Swift-Prompts.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>09C5C0715506BB049CCA8345F95033A47903ECE3</key>
-		<string>../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/GabrielAlva/Swift-Prompts.git</string>
+	<string>https://github.com/hons82/Swift-Prompts.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
