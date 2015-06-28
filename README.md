@@ -1,6 +1,4 @@
-![Platform](https://img.shields.io/badge/Platform-iOS-lightgrey.svg?style=flat)
 ![License](https://img.shields.io/badge/Language-Swift-brightgreen.svg?style=flat)
-![Level](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)
 [![Pod Version](http://img.shields.io/cocoapods/v/Swift-Prompts.svg?style=flat)](http://cocoadocs.org/docsets/Swift-Prompts/)
 [![Pod Platform](http://img.shields.io/cocoapods/p/Swift-Prompts.svg?style=flat)](http://cocoadocs.org/docsets/Swift-Prompts/)
 [![Pod License](http://img.shields.io/cocoapods/l/Swift-Prompts.svg?style=flat)](http://opensource.org/licenses/MIT)
