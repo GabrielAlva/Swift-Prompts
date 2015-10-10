@@ -77,7 +77,7 @@ public class SwiftPromptsView: UIView
     //Construct the prompt by overriding the view's drawRect
     override public func drawRect(rect: CGRect)
     {
-        var backgroundImage : UIImage = snapshot(self.superview)
+        let backgroundImage : UIImage = snapshot(self.superview)
         var effectImage : UIImage!
         var transparencyAndColorImageView : UIImageView!
         
@@ -87,7 +87,7 @@ public class SwiftPromptsView: UIView
         case .LeveledBlurredWithTransparencyView:
             if (enableBlurring) {
                 effectImage = backgroundImage.applyBlurWithRadius(blurringLevel, tintColor: nil, saturationDeltaFactor: 1.0, maskImage: nil)
-                var blurredImageView = UIImageView(image: effectImage)
+                let blurredImageView = UIImageView(image: effectImage)
                 self.addSubview(blurredImageView)
             }
             if (enableTransparencyWithColor) {
@@ -97,23 +97,22 @@ public class SwiftPromptsView: UIView
             }
         case .LightBlurredEffect:
             effectImage = backgroundImage.applyLightEffect()
-            var lightEffectImageView = UIImageView(image: effectImage)
+            let lightEffectImageView = UIImageView(image: effectImage)
             self.addSubview(lightEffectImageView)
             
         case .ExtraLightBlurredEffect:
             effectImage = backgroundImage.applyExtraLightEffect()
-            var extraLightEffectImageView = UIImageView(image: effectImage)
+            let extraLightEffectImageView = UIImageView(image: effectImage)
             self.addSubview(extraLightEffectImageView)
             
         case .DarkBlurredEffect:
             effectImage = backgroundImage.applyDarkEffect()
-            var darkEffectImageView = UIImageView(image: effectImage)
+            let darkEffectImageView = UIImageView(image: effectImage)
             self.addSubview(darkEffectImageView)
         }
         
         //Create the prompt and assign its size and position
-        var promptSize = CGRect(x: 0, y: 0, width: promptWidth, height: promptHeight)
-        var swiftPrompt = PromptBoxView(master: self)
+        let swiftPrompt = PromptBoxView(master: self)
         swiftPrompt.backgroundColor = UIColor.clearColor()
         swiftPrompt.center = CGPointMake(self.center.x, self.center.y)
         self.addSubview(swiftPrompt)
@@ -121,7 +120,7 @@ public class SwiftPromptsView: UIView
         //Add the button(s) on the bottom of the prompt
         if (enableDoubleButtons == false)
         {
-            let button   = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+            let button   = UIButton(type: UIButtonType.System)
             button.frame = CGRectMake(0, promptHeight-52, promptWidth, 41)
             button.setTitleColor(mainButtonColor, forState: .Normal)
             button.titleLabel!.font = UIFont(name: "HelveticaNeue-Light", size: 20)
@@ -134,13 +133,13 @@ public class SwiftPromptsView: UIView
         else
         {
             if (promptButtonDividerVisibility) {
-                var divider = UIView(frame: CGRectMake(promptWidth/2, promptHeight-47, 0.5, 31))
+                let divider = UIView(frame: CGRectMake(promptWidth/2, promptHeight-47, 0.5, 31))
                 divider.backgroundColor = promptButtonDividerColor
                 
                 swiftPrompt.addSubview(divider)
             }
             
-            let button   = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+            let button   = UIButton(type: UIButtonType.System)
             button.frame = CGRectMake(promptWidth/2, promptHeight-52, promptWidth/2, 41)
             button.setTitleColor(mainButtonColor, forState: .Normal)
             button.titleLabel!.font = UIFont(name: "HelveticaNeue-Light", size: 20)
@@ -150,7 +149,7 @@ public class SwiftPromptsView: UIView
             
             swiftPrompt.addSubview(button)
             
-            let secondButton   = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+            let secondButton   = UIButton(type: UIButtonType.System)
             secondButton.frame = CGRectMake(0, promptHeight-52, promptWidth/2, 41)
             secondButton.setTitleColor(secondButtonColor, forState: .Normal)
             secondButton.titleLabel!.font = UIFont(name: "HelveticaNeue-Light", size: 20)
@@ -164,7 +163,7 @@ public class SwiftPromptsView: UIView
         //Add the top dismiss button if enabled
         if (promptDismissIconVisibility)
         {
-            let dismissButton   = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+            let dismissButton   = UIButton(type: UIButtonType.System)
             dismissButton.frame = CGRectMake(5, 17, 35, 35)
             dismissButton.addTarget(self, action: "dismissPrompt", forControlEvents: UIControlEvents.TouchUpInside)
             
@@ -172,7 +171,7 @@ public class SwiftPromptsView: UIView
         }
         
         //Apply animation effect to present this view
-        var applicationLoadViewIn = CATransition()
+        let applicationLoadViewIn = CATransition()
         applicationLoadViewIn.duration = 0.4
         applicationLoadViewIn.type = kCATransitionReveal
         applicationLoadViewIn.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
@@ -196,7 +195,7 @@ public class SwiftPromptsView: UIView
     {
         UIGraphicsBeginImageContextWithOptions(view.bounds.size, true, 0)
         view.drawViewHierarchyInRect(view.bounds, afterScreenUpdates: true)
-        var image : UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        let image : UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext();
         
         return image;
@@ -266,17 +265,17 @@ public class SwiftPromptsView: UIView
         {
             //Create a link to the parent class to access its vars and init with the prompts size
             masterClass = master
-            var promptSize = CGRect(x: 0, y: 0, width: masterClass.promptWidth, height: masterClass.promptHeight)
+            let promptSize = CGRect(x: 0, y: 0, width: masterClass.promptWidth, height: masterClass.promptHeight)
             super.init(frame: promptSize)
             
             // Initialize Gesture Recognizer
             if (masterClass.enablePromptGestures) {
-                var panRecognizer = UIPanGestureRecognizer(target:self, action:"detectPan:")
+                let panRecognizer = UIPanGestureRecognizer(target:self, action:"detectPan:")
                 self.gestureRecognizers = [panRecognizer]
             }
         }
 
-        required init(coder aDecoder: NSCoder)
+        required init?(coder aDecoder: NSCoder)
         {
             fatalError("init(coder:) has not been implemented")
         }
@@ -292,16 +291,15 @@ public class SwiftPromptsView: UIView
             if lastLocation==CGPointZero{
                 lastLocation = self.center
             }
-            var translation  = recognizer.translationInView(self)
+            let translation  = recognizer.translationInView(self)
             self.center = CGPointMake(lastLocation.x + translation.x, lastLocation.y + translation.y)
             
-            var verticalDistanceFromCenter : CGFloat = fabs(translation.y)
-            var horizontalDistanceFromCenter : CGFloat = fabs(translation.x)
+            let verticalDistanceFromCenter : CGFloat = fabs(translation.y)
             var shouldDismissPrompt : Bool = false
             
             //Dim the prompt accordingly to the specified radius
             if (verticalDistanceFromCenter < 100.0) {
-                var radiusAlphaLevel : CGFloat = 1.0 - verticalDistanceFromCenter/100
+                let radiusAlphaLevel : CGFloat = 1.0 - verticalDistanceFromCenter/100
                 self.alpha = radiusAlphaLevel
                 //self.superview!.alpha = radiusAlphaLevel
                 shouldDismissPrompt = false
@@ -335,7 +333,7 @@ public class SwiftPromptsView: UIView
             }
         }
         
-        override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent)
+        override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
         {
             // Remember original location
             lastLocation = self.center

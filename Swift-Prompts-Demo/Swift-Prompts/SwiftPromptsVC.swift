@@ -160,25 +160,25 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
         return false
     }
     
-    override func supportedInterfaceOrientations() -> Int {
-        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Portrait
     }
     
     // MARK: - Delegate functions for the prompt
     
     func clickedOnTheMainButton() {
-        println("Clicked on the main button")
+        print("Clicked on the main button")
         prompt.dismissPrompt()
     }
     
     func clickedOnTheSecondButton() {
-        println("Clicked on the second button")
+        print("Clicked on the second button")
         prompt.dismissPrompt()
         
     }
     
     func promptWasDismissed() {
-        println("Dismissed the prompt")
+        print("Dismissed the prompt")
     }
     
     override func didReceiveMemoryWarning() {
