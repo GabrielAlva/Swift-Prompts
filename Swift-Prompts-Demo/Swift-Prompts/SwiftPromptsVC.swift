@@ -43,6 +43,7 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
         prompt.setPromptContentTxtColor(UIColor(red: 59.0/255.0, green: 89.0/255.0, blue: 152.0/255.0, alpha: 0.72))
         prompt.setPromptBottomLineColor(UIColor(red: 151.0/255.0, green: 151.0/255.0, blue: 151.0/255.0, alpha: 1.0))
         prompt.setMainButtonText("ok")
+        prompt.setImage(UIImage(named: "test-image-3"))
         
         self.view.addSubview(prompt)
     }
@@ -70,6 +71,7 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
         prompt.enableDoubleButtonsOnPrompt()
         prompt.setMainButtonText("Send")
         prompt.setSecondButtonText("Cancel")
+        prompt.setImage(UIImage(named: "test-image-1"))
         
         self.view.addSubview(prompt)
     }
@@ -94,6 +96,7 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
         prompt.setPromptBottomBarColor(UIColor(red: 34.0/255.0, green: 139.0/255.0, blue: 34.0/255.0, alpha: 0.67))
         prompt.setMainButtonColor(UIColor.whiteColor())
         prompt.setMainButtonText("OK")
+        prompt.setImage(UIImage(named: "test-image-3"))
         
         self.view.addSubview(prompt)
     }
@@ -108,7 +111,7 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
         prompt.enableDarkEffectView()
         
         //Set the properties of the prompt
-        prompt.setPromptHeader("Intagram")
+        prompt.setPromptHeader("Instagram")
         prompt.setPromptContentText("Would you like to post this photo to Instagram?")
         prompt.setPromptDismissIconVisibility(true)
         prompt.setPromptTopLineVisibility(false)
@@ -123,6 +126,7 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
         prompt.setPromptBackgroundColor(UIColor(red: 255.0/255.0, green: 253.0/255.0, blue: 195.0/255.0, alpha: 1.0))
         prompt.setMainButtonColor(UIColor(red: 177.0/255.0, green: 109.0/255.0, blue: 68.0/255.0, alpha: 1.0))
         prompt.setPromptBottomLineColor(UIColor(red: 177.0/255.0, green: 109.0/255.0, blue: 68.0/255.0, alpha: 1.0))
+        prompt.setImage(UIImage(named: "test-image-2"))
         
         self.view.addSubview(prompt)
     }
@@ -152,6 +156,7 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
         prompt.setPromptBottomBarColor(UIColor(red: 133.0/255.0, green: 133.0/255.0, blue: 133.0/255.0, alpha: 1.0))
         prompt.setMainButtonColor(UIColor.whiteColor())
         prompt.setMainButtonText("Delete")
+        prompt.setImage(UIImage(named: "test-image-1"))
         
         self.view.addSubview(prompt)
     }
