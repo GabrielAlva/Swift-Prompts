@@ -117,16 +117,10 @@ public class SwiftPromptsView: UIView
         
         //Calculate the image size requirements (conforming to the max width of the prompt width)
         if let imageToAdd = self.image {
-            let aspectRatio = imageToAdd.size.height / imageToAdd.size.width
-            let maximumWidth = promptWidth - 20
-            var imageSize = imageToAdd.size
+            let padding = 20 as CGFloat
+            let maximumWidth = promptWidth - padding
             
-            if imageSize.width >= maximumWidth {
-                imageSize.width = maximumWidth
-                imageSize.height = imageSize.width * aspectRatio
-            }
-            
-            self.calculatedImageSize = imageSize
+            self.calculatedImageSize = imageToAdd.calculateImageSizeForConstraints(maximumWidth, maximumHeight: promptHeight)
             
             //Update the prompt height with the calculated image size (including some padding if the image has height > 0)
             self.promptHeight += self.calculatedImageSize.height + (self.calculatedImageSize.height > 0 ? 20 : 0)
