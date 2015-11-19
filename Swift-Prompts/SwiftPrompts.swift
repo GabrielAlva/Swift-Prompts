@@ -16,19 +16,51 @@ public class SwiftPrompts : NSObject {
 
     //// Drawing Methods
 
-    public class func drawSwiftPrompt(frame frame: CGRect, backgroundColor: UIColor, headerBarColor: UIColor, bottomBarColor: UIColor, headerTxtColor: UIColor, contentTxtColor: UIColor, outlineColor: UIColor, topLineColor: UIColor, bottomLineColor: UIColor, dismissIconButton: UIColor, promptText: String, textSize: CGFloat, topBarVisibility: Bool, bottomBarVisibility: Bool, headerText: String, headerSize: CGFloat, topLineVisibility: Bool, bottomLineVisibility: Bool, outlineVisibility: Bool, dismissIconVisibility: Bool) {
+    public class func drawSwiftPrompt(frame frame: CGRect, backgroundColor: UIColor, headerBarColor: UIColor, bottomBarColor: UIColor, headerTxtColor: UIColor, contentTxtColor: UIColor, outlineColor: UIColor, topLineColor: UIColor, bottomLineColor: UIColor, dismissIconButton: UIColor, promptText: String, textSize: CGFloat, topBarVisibility: Bool, bottomBarVisibility: Bool, headerText: String, headerSize: CGFloat, imageHeight: CGFloat, topLineVisibility: Bool, bottomLineVisibility: Bool, outlineVisibility: Bool, dismissIconVisibility: Bool) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()
-
+        
+        //// Constants
+        let _outsideRect = CGRectMake(frame.minX + floor(frame.width * 0.01778 + 0.5),
+                                      frame.minY + 9,
+                                      floor(frame.width * 0.98667 + 0.5) - floor(frame.width * 0.01778 + 0.5),
+                                      frame.height - 19)
+        let _bottomBarRect = CGRectMake(frame.minX + floor(frame.width * 0.01778 + 0.5),
+                                        frame.minY + frame.height - 51,
+                                        floor(frame.width * 0.98667 + 0.5) - floor(frame.width * 0.01778 + 0.5),
+                                        41)
+        let _cornerRadius = 12 as CGFloat
+        let _cornerRadii = CGSizeMake(_cornerRadius, _cornerRadius)
+        let _promptTextRect = CGRectMake(frame.minX + 13,
+                                         frame.minY + 56 + imageHeight + (imageHeight > 0 ? 10 : 0),
+                                         frame.width - 26,
+                                         frame.height - 109)
+        let _topBarRect = CGRectMake(frame.minX + floor(frame.width * 0.01778 + 0.5),
+                                     frame.minY + 9,
+                                     floor(frame.width * 0.98667 + 0.5) - floor(frame.width * 0.01778 + 0.5),
+                                     44)
+        let _headerTextRect = CGRectMake(frame.minX + floor(frame.width * 0.05333 + 0.5),
+                                         frame.minY + 17,
+                                         floor(frame.width * 0.93778 + 0.5) - floor(frame.width * 0.05333 + 0.5),
+                                         34)
+        let _topLineRect = CGRectMake(frame.minX + 12,
+                                      frame.minY + 53,
+                                      frame.width - 23,
+                                      1)
+        let _bottomLineRect = CGRectMake(frame.minX + 12,
+                                         frame.minY + frame.height - 52,
+                                         frame.width - 23,
+                                         1)
+        
         //// Rectangle Drawing
-        let rectanglePath = UIBezierPath(roundedRect: CGRectMake(frame.minX + floor(frame.width * 0.01778 + 0.5), frame.minY + 9, floor(frame.width * 0.98667 + 0.5) - floor(frame.width * 0.01778 + 0.5), frame.height - 19), cornerRadius: 12)
+        let rectanglePath = UIBezierPath(roundedRect: _outsideRect, cornerRadius: _cornerRadius)
         backgroundColor.setFill()
         rectanglePath.fill()
 
 
         if (outlineVisibility) {
             //// Rectangle 6 Drawing
-            let rectangle6Path = UIBezierPath(roundedRect: CGRectMake(frame.minX + floor(frame.width * 0.01778 + 0.5), frame.minY + 9, floor(frame.width * 0.98667 + 0.5) - floor(frame.width * 0.01778 + 0.5), frame.height - 19), cornerRadius: 12)
+            let rectangle6Path = UIBezierPath(roundedRect: _outsideRect, cornerRadius: _cornerRadius)
             outlineColor.setStroke()
             rectangle6Path.lineWidth = 3.5
             rectangle6Path.stroke()
@@ -37,53 +69,55 @@ public class SwiftPrompts : NSObject {
 
         if (bottomBarVisibility) {
             //// Rectangle 2 Drawing
-            let rectangle2Path = UIBezierPath(roundedRect: CGRectMake(frame.minX + floor(frame.width * 0.01778 + 0.5), frame.minY + frame.height - 51, floor(frame.width * 0.98667 + 0.5) - floor(frame.width * 0.01778 + 0.5), 41), byRoundingCorners: [UIRectCorner.BottomLeft, UIRectCorner.BottomRight], cornerRadii: CGSizeMake(12, 12))
+            let rectangle2Path = UIBezierPath(roundedRect: _bottomBarRect, byRoundingCorners: [UIRectCorner.BottomLeft, UIRectCorner.BottomRight], cornerRadii: _cornerRadii)
             rectangle2Path.closePath()
             bottomBarColor.setFill()
             rectangle2Path.fill()
         }
 
 
-        //// Text Drawing
-        let textRect = CGRectMake(frame.minX + 13, frame.minY + 56, frame.width - 26, frame.height - 109)
-        let textStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
-        textStyle.alignment = NSTextAlignment.Center
+        //// Prompt Text Drawing
+        let promptTextStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
+        promptTextStyle.alignment = NSTextAlignment.Center
 
-        let textFontAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: textSize)!, NSForegroundColorAttributeName: contentTxtColor, NSParagraphStyleAttributeName: textStyle]
+        let promptTextFontAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: textSize)!, NSForegroundColorAttributeName: contentTxtColor, NSParagraphStyleAttributeName: promptTextStyle]
 
-        let textTextHeight: CGFloat = NSString(string: promptText).boundingRectWithSize(CGSizeMake(textRect.width, CGFloat.infinity), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: textFontAttributes, context: nil).size.height
+        let promptTextTextHeight: CGFloat = NSString(string: promptText).boundingRectWithSize(CGSizeMake(_promptTextRect.width, CGFloat.infinity), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: promptTextFontAttributes, context: nil).size.height
         CGContextSaveGState(context)
-        CGContextClipToRect(context, textRect);
-        NSString(string: promptText).drawInRect(CGRectMake(textRect.minX, textRect.minY + (textRect.height - textTextHeight) / 2, textRect.width, textTextHeight), withAttributes: textFontAttributes)
+        CGContextClipToRect(context, _promptTextRect);
+        
+        // If there is no image, display the prompt text centered vertically in the prompt body rectangle
+        // Otherwise; if there IS an image, display the text starting from the foot of the image (top aligned)
+        let promptTextY = imageHeight == 0 ? _promptTextRect.minY + (_promptTextRect.height - promptTextTextHeight) / 2 : _promptTextRect.minY
+        NSString(string: promptText).drawInRect(CGRectMake(_promptTextRect.minX, promptTextY, _promptTextRect.width, promptTextTextHeight), withAttributes: promptTextFontAttributes)
         CGContextRestoreGState(context)
 
 
         if (topBarVisibility) {
             //// Rectangle 3 Drawing
-            let rectangle3Path = UIBezierPath(roundedRect: CGRectMake(frame.minX + floor(frame.width * 0.01778 + 0.5), frame.minY + 9, floor(frame.width * 0.98667 + 0.5) - floor(frame.width * 0.01778 + 0.5), 44), byRoundingCorners: [UIRectCorner.TopLeft, UIRectCorner.TopRight], cornerRadii: CGSizeMake(12, 12))
+            let rectangle3Path = UIBezierPath(roundedRect: _topBarRect, byRoundingCorners: [UIRectCorner.TopLeft, UIRectCorner.TopRight], cornerRadii: _cornerRadii)
             rectangle3Path.closePath()
             headerBarColor.setFill()
             rectangle3Path.fill()
         }
 
 
-        //// Text 2 Drawing
-        let text2Rect = CGRectMake(frame.minX + floor(frame.width * 0.05333 + 0.5), frame.minY + 17, floor(frame.width * 0.93778 + 0.5) - floor(frame.width * 0.05333 + 0.5), 34)
-        let text2Style = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
-        text2Style.alignment = NSTextAlignment.Center
+        //// Header Text Drawing
+        let headerTextStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
+        headerTextStyle.alignment = NSTextAlignment.Center
 
-        let text2FontAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: headerSize)!, NSForegroundColorAttributeName: headerTxtColor, NSParagraphStyleAttributeName: text2Style]
+        let headerTextFontAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: headerSize)!, NSForegroundColorAttributeName: headerTxtColor, NSParagraphStyleAttributeName: headerTextStyle]
 
-        let text2TextHeight: CGFloat = NSString(string: headerText).boundingRectWithSize(CGSizeMake(text2Rect.width, CGFloat.infinity), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: text2FontAttributes, context: nil).size.height
+        let headerTextTextHeight: CGFloat = NSString(string: headerText).boundingRectWithSize(CGSizeMake(_headerTextRect.width, CGFloat.infinity), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: headerTextFontAttributes, context: nil).size.height
         CGContextSaveGState(context)
-        CGContextClipToRect(context, text2Rect);
-        NSString(string: headerText).drawInRect(CGRectMake(text2Rect.minX, text2Rect.minY + (text2Rect.height - text2TextHeight) / 2, text2Rect.width, text2TextHeight), withAttributes: text2FontAttributes)
+        CGContextClipToRect(context, _headerTextRect);
+        NSString(string: headerText).drawInRect(CGRectMake(_headerTextRect.minX, _headerTextRect.minY + (_headerTextRect.height - headerTextTextHeight) / 2, _headerTextRect.width, headerTextTextHeight), withAttributes: headerTextFontAttributes)
         CGContextRestoreGState(context)
 
 
         if (topLineVisibility) {
             //// Rectangle 4 Drawing
-            let rectangle4Path = UIBezierPath(rect: CGRectMake(frame.minX + 12, frame.minY + 53, frame.width - 23, 1))
+            let rectangle4Path = UIBezierPath(rect: _topLineRect)
             topLineColor.setFill()
             rectangle4Path.fill()
         }
@@ -91,7 +125,7 @@ public class SwiftPrompts : NSObject {
 
         if (bottomLineVisibility) {
             //// Rectangle 5 Drawing
-            let rectangle5Path = UIBezierPath(rect: CGRectMake(frame.minX + 12, frame.minY + frame.height - 52, frame.width - 23, 1))
+            let rectangle5Path = UIBezierPath(rect: _bottomLineRect)
             bottomLineColor.setFill()
             rectangle5Path.fill()
         }

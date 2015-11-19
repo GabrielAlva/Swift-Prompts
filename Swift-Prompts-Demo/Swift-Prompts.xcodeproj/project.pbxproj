@@ -16,6 +16,9 @@
 		6472B9101AB5F68500B4BA44 /* Swift_PromptsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6472B90F1AB5F68500B4BA44 /* Swift_PromptsTests.swift */; };
 		6472B91A1AB5F6B700B4BA44 /* SwiftPromptsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6472B9191AB5F6B700B4BA44 /* SwiftPromptsView.swift */; };
 		6472B91E1AB5F6FC00B4BA44 /* UIImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6472B91D1AB5F6FC00B4BA44 /* UIImageEffects.swift */; };
+		CBE637A71BFD9D8900FEED21 /* UIImage+ImageSizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE637A61BFD9D8900FEED21 /* UIImage+ImageSizer.swift */; settings = {ASSET_TAGS = (); }; };
+		CBF7646C1BFDA38700F209E3 /* UIImage+ImageSizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF7646B1BFDA38700F209E3 /* UIImage+ImageSizerTests.swift */; settings = {ASSET_TAGS = (); }; };
+		CBF7646D1BFDA61900F209E3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6472B9001AB5F68500B4BA44 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,8 @@
 		6472B90F1AB5F68500B4BA44 /* Swift_PromptsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_PromptsTests.swift; sourceTree = "<group>"; };
 		6472B9191AB5F6B700B4BA44 /* SwiftPromptsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPromptsView.swift; sourceTree = "<group>"; };
 		6472B91D1AB5F6FC00B4BA44 /* UIImageEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageEffects.swift; sourceTree = "<group>"; };
+		CBE637A61BFD9D8900FEED21 /* UIImage+ImageSizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageSizer.swift"; sourceTree = "<group>"; };
+		CBF7646B1BFDA38700F209E3 /* UIImage+ImageSizerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageSizerTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				6472B90F1AB5F68500B4BA44 /* Swift_PromptsTests.swift */,
+				CBF7646B1BFDA38700F209E3 /* UIImage+ImageSizerTests.swift */,
 				6472B90D1AB5F68500B4BA44 /* Supporting Files */,
 			);
 			path = "Swift-PromptsTests";
@@ -125,6 +131,7 @@
 				6472B9191AB5F6B700B4BA44 /* SwiftPromptsView.swift */,
 				643F4E791ABFCD4A00628843 /* SwiftPrompts.swift */,
 				6472B91D1AB5F6FC00B4BA44 /* UIImageEffects.swift */,
+				CBE637A61BFD9D8900FEED21 /* UIImage+ImageSizer.swift */,
 			);
 			name = "Swift Prompts";
 			path = "../../Swift-Prompts";
@@ -222,6 +229,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBF7646D1BFDA61900F209E3 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +243,7 @@
 				6472B91E1AB5F6FC00B4BA44 /* UIImageEffects.swift in Sources */,
 				6472B8FC1AB5F68500B4BA44 /* SwiftPromptsVC.swift in Sources */,
 				6472B91A1AB5F6B700B4BA44 /* SwiftPromptsView.swift in Sources */,
+				CBE637A71BFD9D8900FEED21 /* UIImage+ImageSizer.swift in Sources */,
 				643F4E7A1ABFCD4A00628843 /* SwiftPrompts.swift in Sources */,
 				6472B8FA1AB5F68500B4BA44 /* AppDelegate.swift in Sources */,
 			);
@@ -245,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6472B9101AB5F68500B4BA44 /* Swift_PromptsTests.swift in Sources */,
+				CBF7646C1BFDA38700F209E3 /* UIImage+ImageSizerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +372,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "Swift-Prompts/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "GabrielAlva.$(PRODUCT_NAME:rfc1034identifier)";
@@ -373,6 +384,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "Swift-Prompts/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "GabrielAlva.$(PRODUCT_NAME:rfc1034identifier)";
@@ -384,6 +396,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEFINES_MODULE = NO;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -401,6 +414,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEFINES_MODULE = NO;
 				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Swift-PromptsTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

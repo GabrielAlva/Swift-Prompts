@@ -74,6 +74,10 @@ public class SwiftPromptsView: UIView
     }
     private var backgroundType = TypeOfBackground.LeveledBlurredWithTransparencyView
     
+    //Image properties
+    private var image : UIImage?
+    private var calculatedImageSize : CGSize = CGSizeMake(0, 0)
+    
     //Construct the prompt by overriding the view's drawRect
     override public func drawRect(rect: CGRect)
     {
@@ -111,12 +115,31 @@ public class SwiftPromptsView: UIView
             self.addSubview(darkEffectImageView)
         }
         
+        //Calculate the image size requirements (conforming to the max width of the prompt width)
+        if let imageToAdd = self.image {
+            let padding = 20 as CGFloat
+            let maximumWidth = promptWidth - padding
+            
+            self.calculatedImageSize = imageToAdd.calculateImageSizeForConstraints(maximumWidth, maximumHeight: promptHeight)
+            
+            //Update the prompt height with the calculated image size (including some padding if the image has height > 0)
+            self.promptHeight += self.calculatedImageSize.height + (self.calculatedImageSize.height > 0 ? 20 : 0)
+        }
+        
         //Create the prompt and assign its size and position
         let swiftPrompt = PromptBoxView(master: self)
         swiftPrompt.backgroundColor = UIColor.clearColor()
         swiftPrompt.center = CGPointMake(self.center.x, self.center.y)
         self.addSubview(swiftPrompt)
         
+        //Add the image if required
+        if let imageToAdd = self.image {
+            let imageView = UIImageView(frame: CGRectMake(promptWidth/2 - self.calculatedImageSize.width/2, 60, self.calculatedImageSize.width, self.calculatedImageSize.height))
+            imageView.image = imageToAdd
+            
+            swiftPrompt.addSubview(imageView)
+        }
+
         //Add the button(s) on the bottom of the prompt
         if (enableDoubleButtons == false)
         {
@@ -250,6 +273,7 @@ public class SwiftPromptsView: UIView
     public func setPromptButtonDividerVisibility (dividerVisibility : Bool) { promptButtonDividerVisibility = dividerVisibility }
     public func setPromptDismissIconColor (dismissIconColor : UIColor) { promptDismissIconColor = dismissIconColor }
     public func setPromptDismissIconVisibility (dismissIconVisibility : Bool) { promptDismissIconVisibility = dismissIconVisibility }
+    public func setImage(image: UIImage?) { self.image = image }
     func enableGesturesOnPrompt (gestureEnabler : Bool) { enablePromptGestures = gestureEnabler }
     
     // MARK: - Create The Prompt With A UIView Sublass
@@ -283,7 +307,7 @@ public class SwiftPromptsView: UIView
         override func drawRect(rect: CGRect)
         {
             //Call to the SwiftPrompts drawSwiftPrompt func, this handles the drawing of the prompt
-            SwiftPrompts.drawSwiftPrompt(frame: self.bounds, backgroundColor: masterClass.promptBackgroundColor, headerBarColor: masterClass.promptHeaderBarColor, bottomBarColor: masterClass.promptBottomBarColor, headerTxtColor: masterClass.promptHeaderTxtColor, contentTxtColor: masterClass.promptContentTxtColor, outlineColor: masterClass.promptOutlineColor, topLineColor: masterClass.promptTopLineColor, bottomLineColor: masterClass.promptBottomLineColor, dismissIconButton: masterClass.promptDismissIconColor, promptText: masterClass.promptContentText, textSize: masterClass.promptContentTxtSize, topBarVisibility: masterClass.promptTopBarVisibility, bottomBarVisibility: masterClass.promptBottomBarVisibility, headerText: masterClass.promptHeader, headerSize: masterClass.promptHeaderTxtSize, topLineVisibility: masterClass.promptTopLineVisibility, bottomLineVisibility: masterClass.promptBottomLineVisibility, outlineVisibility: masterClass.promptOutlineVisibility, dismissIconVisibility: masterClass.promptDismissIconVisibility)
+            SwiftPrompts.drawSwiftPrompt(frame: self.bounds, backgroundColor: masterClass.promptBackgroundColor, headerBarColor: masterClass.promptHeaderBarColor, bottomBarColor: masterClass.promptBottomBarColor, headerTxtColor: masterClass.promptHeaderTxtColor, contentTxtColor: masterClass.promptContentTxtColor, outlineColor: masterClass.promptOutlineColor, topLineColor: masterClass.promptTopLineColor, bottomLineColor: masterClass.promptBottomLineColor, dismissIconButton: masterClass.promptDismissIconColor, promptText: masterClass.promptContentText, textSize: masterClass.promptContentTxtSize, topBarVisibility: masterClass.promptTopBarVisibility, bottomBarVisibility: masterClass.promptBottomBarVisibility, headerText: masterClass.promptHeader, headerSize: masterClass.promptHeaderTxtSize, imageHeight: masterClass.calculatedImageSize.height, topLineVisibility: masterClass.promptTopLineVisibility, bottomLineVisibility: masterClass.promptBottomLineVisibility, outlineVisibility: masterClass.promptOutlineVisibility, dismissIconVisibility: masterClass.promptDismissIconVisibility)
         }
         
         func detectPan(recognizer:UIPanGestureRecognizer)
