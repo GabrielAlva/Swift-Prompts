@@ -9,15 +9,13 @@
 import Foundation
 import UIKit
 
-@objc public protocol SwiftPromptsProtocol
-{
+@objc public protocol SwiftPromptsProtocol {
     optional func clickedOnTheMainButton()
     optional func clickedOnTheSecondButton()
     optional func promptWasDismissed()
 }
 
-public class SwiftPromptsView: UIView
-{
+public class SwiftPromptsView: UIView {
     //Delegate var
     public var delegate : SwiftPromptsProtocol?
     
@@ -65,8 +63,7 @@ public class SwiftPromptsView: UIView
     private var enablePromptGestures : Bool = true
     
     //Declare the enum for use in the construction of the background switch
-    enum TypeOfBackground
-    {
+    enum TypeOfBackground {
         case LeveledBlurredWithTransparencyView
         case LightBlurredEffect
         case ExtraLightBlurredEffect
@@ -75,15 +72,13 @@ public class SwiftPromptsView: UIView
     private var backgroundType = TypeOfBackground.LeveledBlurredWithTransparencyView
     
     //Construct the prompt by overriding the view's drawRect
-    override public func drawRect(rect: CGRect)
-    {
+    override public func drawRect(rect: CGRect) {
         let backgroundImage : UIImage = snapshot(self.superview)
         var effectImage : UIImage!
         var transparencyAndColorImageView : UIImageView!
         
         //Construct the prompt's background
-        switch backgroundType
-        {
+        switch backgroundType {
         case .LeveledBlurredWithTransparencyView:
             if (enableBlurring) {
                 effectImage = backgroundImage.applyBlurWithRadius(blurringLevel, tintColor: nil, saturationDeltaFactor: 1.0, maskImage: nil)
@@ -118,8 +113,7 @@ public class SwiftPromptsView: UIView
         self.addSubview(swiftPrompt)
         
         //Add the button(s) on the bottom of the prompt
-        if (enableDoubleButtons == false)
-        {
+        if (enableDoubleButtons == false) {
             let button   = UIButton(type: UIButtonType.System)
             button.frame = CGRectMake(0, promptHeight-52, promptWidth, 41)
             button.setTitleColor(mainButtonColor, forState: .Normal)
@@ -129,9 +123,7 @@ public class SwiftPromptsView: UIView
             button.addTarget(self, action: #selector(SwiftPromptsView.panelButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
     
             swiftPrompt.addSubview(button)
-        }
-        else
-        {
+        } else {
             if (promptButtonDividerVisibility) {
                 let divider = UIView(frame: CGRectMake(promptWidth/2, promptHeight-47, 0.5, 31))
                 divider.backgroundColor = promptButtonDividerColor
@@ -161,8 +153,7 @@ public class SwiftPromptsView: UIView
         }
         
         //Add the top dismiss button if enabled
-        if (promptDismissIconVisibility)
-        {
+        if (promptDismissIconVisibility) {
             let dismissButton   = UIButton(type: UIButtonType.System)
             dismissButton.frame = CGRectMake(5, 17, 35, 35)
             dismissButton.addTarget(self, action: #selector(SwiftPromptsView.dismissPrompt), forControlEvents: UIControlEvents.TouchUpInside)
@@ -178,8 +169,7 @@ public class SwiftPromptsView: UIView
         self.layer.addAnimation(applicationLoadViewIn, forKey: kCATransitionReveal)
     }
     
-    func panelButtonAction(sender:UIButton?)
-    {
+    func panelButtonAction(sender:UIButton?) {
         switch (sender!.tag) {
         case 1:
             delegate?.clickedOnTheMainButton?()
@@ -191,8 +181,7 @@ public class SwiftPromptsView: UIView
     }
     
     // MARK: - Helper Functions
-    func snapshot(view: UIView!) -> UIImage!
-    {
+    func snapshot(view: UIView!) -> UIImage! {
         UIGraphicsBeginImageContextWithOptions(view.bounds.size, true, 0)
         view.drawViewHierarchyInRect(view.bounds, afterScreenUpdates: true)
         let image : UIImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -201,8 +190,7 @@ public class SwiftPromptsView: UIView
         return image;
     }
     
-    func dismissPrompt()
-    {
+    public func dismissPrompt() {
         UIView.animateWithDuration(0.6, animations: {
             self.layer.opacity = 0.0
             }, completion: {
