@@ -126,7 +126,7 @@ public class SwiftPromptsView: UIView
             button.titleLabel!.font = UIFont(name: "HelveticaNeue-Light", size: 20)
             button.setTitle(mainButtonText, forState: UIControlState.Normal)
             button.tag = 1
-            button.addTarget(self, action: "panelButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+            button.addTarget(self, action: #selector(SwiftPromptsView.panelButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
     
             swiftPrompt.addSubview(button)
         }
@@ -145,7 +145,7 @@ public class SwiftPromptsView: UIView
             button.titleLabel!.font = UIFont(name: "HelveticaNeue-Light", size: 20)
             button.setTitle(mainButtonText, forState: UIControlState.Normal)
             button.tag = 1
-            button.addTarget(self, action: "panelButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+            button.addTarget(self, action: #selector(SwiftPromptsView.panelButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
             
             swiftPrompt.addSubview(button)
             
@@ -155,7 +155,7 @@ public class SwiftPromptsView: UIView
             secondButton.titleLabel!.font = UIFont(name: "HelveticaNeue-Light", size: 20)
             secondButton.setTitle(secondButtonText, forState: UIControlState.Normal)
             secondButton.tag = 2
-            secondButton.addTarget(self, action: "panelButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+            secondButton.addTarget(self, action: #selector(SwiftPromptsView.panelButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
             
             swiftPrompt.addSubview(secondButton)
         }
@@ -165,7 +165,7 @@ public class SwiftPromptsView: UIView
         {
             let dismissButton   = UIButton(type: UIButtonType.System)
             dismissButton.frame = CGRectMake(5, 17, 35, 35)
-            dismissButton.addTarget(self, action: "dismissPrompt", forControlEvents: UIControlEvents.TouchUpInside)
+            dismissButton.addTarget(self, action: #selector(SwiftPromptsView.dismissPrompt), forControlEvents: UIControlEvents.TouchUpInside)
             
             swiftPrompt.addSubview(dismissButton)
         }
@@ -270,7 +270,7 @@ public class SwiftPromptsView: UIView
             
             // Initialize Gesture Recognizer
             if (masterClass.enablePromptGestures) {
-                let panRecognizer = UIPanGestureRecognizer(target:self, action:"detectPan:")
+                let panRecognizer = UIPanGestureRecognizer(target:self, action:#selector(PromptBoxView.detectPan(_:)))
                 self.gestureRecognizers = [panRecognizer]
             }
         }
