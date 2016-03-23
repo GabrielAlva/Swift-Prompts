@@ -16,6 +16,12 @@
 		6472B9101AB5F68500B4BA44 /* Swift_PromptsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6472B90F1AB5F68500B4BA44 /* Swift_PromptsTests.swift */; };
 		6472B91A1AB5F6B700B4BA44 /* SwiftPromptsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6472B9191AB5F6B700B4BA44 /* SwiftPromptsView.swift */; };
 		6472B91E1AB5F6FC00B4BA44 /* UIImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6472B91D1AB5F6FC00B4BA44 /* UIImageEffects.swift */; };
+		CDA6F4D31CA2856C003CE0A2 /* Swift-Prompts.h in Headers */ = {isa = PBXBuildFile; fileRef = CDA6F4D21CA2856C003CE0A2 /* Swift-Prompts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDA6F4D71CA2856C003CE0A2 /* Swift-Prompts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA6F4D01CA2856C003CE0A2 /* Swift-Prompts.framework */; };
+		CDA6F4D81CA2856C003CE0A2 /* Swift-Prompts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CDA6F4D01CA2856C003CE0A2 /* Swift-Prompts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CDA6F4DD1CA2857C003CE0A2 /* SwiftPromptsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6472B9191AB5F6B700B4BA44 /* SwiftPromptsView.swift */; };
+		CDA6F4DE1CA2857F003CE0A2 /* SwiftPrompts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643F4E791ABFCD4A00628843 /* SwiftPrompts.swift */; };
+		CDA6F4DF1CA28581003CE0A2 /* UIImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6472B91D1AB5F6FC00B4BA44 /* UIImageEffects.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,11 +32,32 @@
 			remoteGlobalIDString = 6472B8F31AB5F68500B4BA44;
 			remoteInfo = "Swift-Prompts";
 		};
+		CDA6F4D51CA2856C003CE0A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6472B8EC1AB5F68500B4BA44 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CDA6F4CF1CA2856C003CE0A2;
+			remoteInfo = "Swift-Prompts";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CDA6F4DC1CA2856C003CE0A2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CDA6F4D81CA2856C003CE0A2 /* Swift-Prompts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		643F4E791ABFCD4A00628843 /* SwiftPrompts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPrompts.swift; sourceTree = "<group>"; };
-		6472B8F41AB5F68500B4BA44 /* Swift-Prompts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Prompts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6472B8F41AB5F68500B4BA44 /* Swift-PromptsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-PromptsExample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6472B8F81AB5F68500B4BA44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6472B8F91AB5F68500B4BA44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6472B8FB1AB5F68500B4BA44 /* SwiftPromptsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftPromptsVC.swift; sourceTree = "<group>"; };
@@ -42,6 +69,9 @@
 		6472B90F1AB5F68500B4BA44 /* Swift_PromptsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_PromptsTests.swift; sourceTree = "<group>"; };
 		6472B9191AB5F6B700B4BA44 /* SwiftPromptsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPromptsView.swift; sourceTree = "<group>"; };
 		6472B91D1AB5F6FC00B4BA44 /* UIImageEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageEffects.swift; sourceTree = "<group>"; };
+		CDA6F4D01CA2856C003CE0A2 /* Swift-Prompts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Swift-Prompts.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDA6F4D21CA2856C003CE0A2 /* Swift-Prompts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift-Prompts.h"; sourceTree = "<group>"; };
+		CDA6F4D41CA2856C003CE0A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,10 +79,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDA6F4D71CA2856C003CE0A2 /* Swift-Prompts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6472B9061AB5F68500B4BA44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDA6F4CC1CA2856C003CE0A2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -67,6 +105,7 @@
 			children = (
 				6472B8F61AB5F68500B4BA44 /* Swift-Prompts */,
 				6472B90C1AB5F68500B4BA44 /* Swift-PromptsTests */,
+				CDA6F4D11CA2856C003CE0A2 /* Swift-Prompts */,
 				6472B8F51AB5F68500B4BA44 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,8 +113,9 @@
 		6472B8F51AB5F68500B4BA44 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6472B8F41AB5F68500B4BA44 /* Swift-Prompts.app */,
+				6472B8F41AB5F68500B4BA44 /* Swift-PromptsExample.app */,
 				6472B9091AB5F68500B4BA44 /* Swift-PromptsTests.xctest */,
+				CDA6F4D01CA2856C003CE0A2 /* Swift-Prompts.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,24 +170,46 @@
 			path = "../../Swift-Prompts";
 			sourceTree = "<group>";
 		};
+		CDA6F4D11CA2856C003CE0A2 /* Swift-Prompts */ = {
+			isa = PBXGroup;
+			children = (
+				CDA6F4D21CA2856C003CE0A2 /* Swift-Prompts.h */,
+				CDA6F4D41CA2856C003CE0A2 /* Info.plist */,
+			);
+			path = "Swift-Prompts";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		CDA6F4CD1CA2856C003CE0A2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDA6F4D31CA2856C003CE0A2 /* Swift-Prompts.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		6472B8F31AB5F68500B4BA44 /* Swift-Prompts */ = {
+		6472B8F31AB5F68500B4BA44 /* Swift-PromptsExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6472B9131AB5F68500B4BA44 /* Build configuration list for PBXNativeTarget "Swift-Prompts" */;
+			buildConfigurationList = 6472B9131AB5F68500B4BA44 /* Build configuration list for PBXNativeTarget "Swift-PromptsExample" */;
 			buildPhases = (
 				6472B8F01AB5F68500B4BA44 /* Sources */,
 				6472B8F11AB5F68500B4BA44 /* Frameworks */,
 				6472B8F21AB5F68500B4BA44 /* Resources */,
+				CDA6F4DC1CA2856C003CE0A2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CDA6F4D61CA2856C003CE0A2 /* PBXTargetDependency */,
 			);
-			name = "Swift-Prompts";
+			name = "Swift-PromptsExample";
 			productName = "Swift-Prompts";
-			productReference = 6472B8F41AB5F68500B4BA44 /* Swift-Prompts.app */;
+			productReference = 6472B8F41AB5F68500B4BA44 /* Swift-PromptsExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6472B9081AB5F68500B4BA44 /* Swift-PromptsTests */ = {
@@ -168,6 +230,24 @@
 			productReference = 6472B9091AB5F68500B4BA44 /* Swift-PromptsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		CDA6F4CF1CA2856C003CE0A2 /* Swift-Prompts */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDA6F4D91CA2856C003CE0A2 /* Build configuration list for PBXNativeTarget "Swift-Prompts" */;
+			buildPhases = (
+				CDA6F4CB1CA2856C003CE0A2 /* Sources */,
+				CDA6F4CC1CA2856C003CE0A2 /* Frameworks */,
+				CDA6F4CD1CA2856C003CE0A2 /* Headers */,
+				CDA6F4CE1CA2856C003CE0A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Swift-Prompts";
+			productName = "Swift-Prompts";
+			productReference = CDA6F4D01CA2856C003CE0A2 /* Swift-Prompts.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -186,6 +266,9 @@
 						CreatedOnToolsVersion = 6.1.1;
 						TestTargetID = 6472B8F31AB5F68500B4BA44;
 					};
+					CDA6F4CF1CA2856C003CE0A2 = {
+						CreatedOnToolsVersion = 7.3;
+					};
 				};
 			};
 			buildConfigurationList = 6472B8EF1AB5F68500B4BA44 /* Build configuration list for PBXProject "Swift-Prompts" */;
@@ -201,8 +284,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6472B8F31AB5F68500B4BA44 /* Swift-Prompts */,
+				6472B8F31AB5F68500B4BA44 /* Swift-PromptsExample */,
 				6472B9081AB5F68500B4BA44 /* Swift-PromptsTests */,
+				CDA6F4CF1CA2856C003CE0A2 /* Swift-Prompts */,
 			);
 		};
 /* End PBXProject section */
@@ -219,6 +303,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6472B9071AB5F68500B4BA44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDA6F4CE1CA2856C003CE0A2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -248,13 +339,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CDA6F4CB1CA2856C003CE0A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDA6F4DD1CA2857C003CE0A2 /* SwiftPromptsView.swift in Sources */,
+				CDA6F4DE1CA2857F003CE0A2 /* SwiftPrompts.swift in Sources */,
+				CDA6F4DF1CA28581003CE0A2 /* UIImageEffects.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		6472B90B1AB5F68500B4BA44 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6472B8F31AB5F68500B4BA44 /* Swift-Prompts */;
+			target = 6472B8F31AB5F68500B4BA44 /* Swift-PromptsExample */;
 			targetProxy = 6472B90A1AB5F68500B4BA44 /* PBXContainerItemProxy */;
+		};
+		CDA6F4D61CA2856C003CE0A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CDA6F4CF1CA2856C003CE0A2 /* Swift-Prompts */;
+			targetProxy = CDA6F4D51CA2856C003CE0A2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -362,6 +468,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Swift-Prompts/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "GabrielAlva.$(PRODUCT_NAME:rfc1034identifier)";
@@ -373,6 +480,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Swift-Prompts/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "GabrielAlva.$(PRODUCT_NAME:rfc1034identifier)";
@@ -410,6 +518,53 @@
 			};
 			name = Release;
 		};
+		CDA6F4DA1CA2856C003CE0A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Swift-Prompts/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "GabrielAlva.Swift-Prompts";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CDA6F4DB1CA2856C003CE0A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Swift-Prompts/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "GabrielAlva.Swift-Prompts";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -422,7 +577,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6472B9131AB5F68500B4BA44 /* Build configuration list for PBXNativeTarget "Swift-Prompts" */ = {
+		6472B9131AB5F68500B4BA44 /* Build configuration list for PBXNativeTarget "Swift-PromptsExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6472B9141AB5F68500B4BA44 /* Debug */,
@@ -439,6 +594,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		CDA6F4D91CA2856C003CE0A2 /* Build configuration list for PBXNativeTarget "Swift-Prompts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDA6F4DA1CA2856C003CE0A2 /* Debug */,
+				CDA6F4DB1CA2856C003CE0A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
