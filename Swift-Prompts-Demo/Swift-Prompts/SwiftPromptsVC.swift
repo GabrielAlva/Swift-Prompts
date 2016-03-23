@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,  SwiftPromptsProtocol{
+class ViewController: UIViewController,  SwiftPromptsProtocol {
 
     @IBOutlet var backgroundImageView: UIImageView!
     
@@ -22,8 +22,7 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
         backgroundImageView.contentMode = .ScaleAspectFill
     }
 
-    @IBAction func facebookPrompt(sender: UIButton)
-    {
+    @IBAction func facebookPrompt(sender: UIButton) {
         //Create an instance of SwiftPromptsView and assign its delegate
         prompt = SwiftPromptsView(frame: self.view.bounds)
         prompt.delegate = self
@@ -47,8 +46,7 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
         self.view.addSubview(prompt)
     }
     
-    @IBAction func whatsAppPrompt(sender: UIButton)
-    {
+    @IBAction func whatsAppPrompt(sender: UIButton) {
         //Create an instance of SwiftPromptsView and assign its delegate
         prompt = SwiftPromptsView(frame: self.view.bounds)
         prompt.delegate = self
@@ -74,8 +72,7 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
         self.view.addSubview(prompt)
     }
     
-    @IBAction func successPrompt(sender: UIButton)
-    {
+    @IBAction func successPrompt(sender: UIButton) {
         //Create an instance of SwiftPromptsView and assign its delegate
         prompt = SwiftPromptsView(frame: self.view.bounds)
         prompt.delegate = self
@@ -98,8 +95,7 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
         self.view.addSubview(prompt)
     }
     
-    @IBAction func instagramPrompt(sender: UIButton)
-    {
+    @IBAction func instagramPrompt(sender: UIButton) {
         //Create an instance of SwiftPromptsView and assign its delegate
         prompt = SwiftPromptsView(frame: self.view.bounds)
         prompt.delegate = self
@@ -127,8 +123,7 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
         self.view.addSubview(prompt)
     }
     
-    @IBAction func deletePrompt(sender: UIButton)
-    {
+    @IBAction func deletePrompt(sender: UIButton) {
         //Create an instance of SwiftPromptsView and assign its delegate
         prompt = SwiftPromptsView(frame: self.view.bounds)
         prompt.delegate = self
@@ -180,12 +175,5 @@ class ViewController: UIViewController,  SwiftPromptsProtocol{
     func promptWasDismissed() {
         print("Dismissed the prompt")
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 

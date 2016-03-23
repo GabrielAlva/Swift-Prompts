@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6472B8F31AB5F68500B4BA44"
-               BuildableName = "Swift-PromptsExample.app"
-               BlueprintName = "Swift-PromptsExample"
+               BuildableName = "Swift-Prompts.app"
+               BlueprintName = "Swift-Prompts"
                ReferencedContainer = "container:Swift-Prompts.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -57,8 +57,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6472B8F31AB5F68500B4BA44"
-            BuildableName = "Swift-PromptsExample.app"
-            BlueprintName = "Swift-PromptsExample"
+            BuildableName = "Swift-Prompts.app"
+            BlueprintName = "Swift-Prompts"
             ReferencedContainer = "container:Swift-Prompts.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -80,8 +80,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6472B8F31AB5F68500B4BA44"
-            BuildableName = "Swift-PromptsExample.app"
-            BlueprintName = "Swift-PromptsExample"
+            BuildableName = "Swift-Prompts.app"
+            BlueprintName = "Swift-Prompts"
             ReferencedContainer = "container:Swift-Prompts.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -99,8 +99,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6472B8F31AB5F68500B4BA44"
-            BuildableName = "Swift-PromptsExample.app"
-            BlueprintName = "Swift-PromptsExample"
+            BuildableName = "Swift-Prompts.app"
+            BlueprintName = "Swift-Prompts"
             ReferencedContainer = "container:Swift-Prompts.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
