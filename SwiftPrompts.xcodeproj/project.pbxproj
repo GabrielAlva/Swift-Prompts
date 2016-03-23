@@ -11,6 +11,14 @@
 		CDA6F5031CA29120003CE0A2 /* SwiftPrompts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6F5001CA29120003CE0A2 /* SwiftPrompts.swift */; };
 		CDA6F5041CA29120003CE0A2 /* SwiftPromptsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6F5011CA29120003CE0A2 /* SwiftPromptsView.swift */; };
 		CDA6F5051CA29120003CE0A2 /* UIImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6F5021CA29120003CE0A2 /* UIImageEffects.swift */; };
+		CDA6F50D1CA293E9003CE0A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6F50C1CA293E9003CE0A2 /* AppDelegate.swift */; };
+		CDA6F5141CA293EA003CE0A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDA6F5131CA293EA003CE0A2 /* Assets.xcassets */; };
+		CDA6F5171CA293EA003CE0A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA6F5151CA293EA003CE0A2 /* LaunchScreen.storyboard */; };
+		CDA6F51D1CA2942A003CE0A2 /* SwiftPromptsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6F51C1CA2942A003CE0A2 /* SwiftPromptsVC.swift */; };
+		CDA6F51F1CA29449003CE0A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA6F51E1CA29449003CE0A2 /* Main.storyboard */; };
+		CDA6F5201CA2946C003CE0A2 /* SwiftPrompts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6F5001CA29120003CE0A2 /* SwiftPrompts.swift */; };
+		CDA6F5211CA2946F003CE0A2 /* SwiftPromptsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6F5011CA29120003CE0A2 /* SwiftPromptsView.swift */; };
+		CDA6F5221CA29473003CE0A2 /* UIImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6F5021CA29120003CE0A2 /* UIImageEffects.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +28,24 @@
 		CDA6F5001CA29120003CE0A2 /* SwiftPrompts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPrompts.swift; sourceTree = "<group>"; };
 		CDA6F5011CA29120003CE0A2 /* SwiftPromptsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPromptsView.swift; sourceTree = "<group>"; };
 		CDA6F5021CA29120003CE0A2 /* UIImageEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageEffects.swift; sourceTree = "<group>"; };
+		CDA6F50A1CA293E9003CE0A2 /* SwiftPrompts-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftPrompts-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDA6F50C1CA293E9003CE0A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CDA6F5131CA293EA003CE0A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CDA6F5161CA293EA003CE0A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CDA6F5181CA293EA003CE0A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDA6F51C1CA2942A003CE0A2 /* SwiftPromptsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPromptsVC.swift; sourceTree = "<group>"; };
+		CDA6F51E1CA29449003CE0A2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CDA6F4EB1CA28FFF003CE0A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDA6F5071CA293E9003CE0A2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				CDA6F4F11CA28FFF003CE0A2 /* SwiftPrompts */,
+				CDA6F50B1CA293E9003CE0A2 /* SwiftPrompts-Example */,
 				CDA6F4F01CA28FFF003CE0A2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				CDA6F4EF1CA28FFF003CE0A2 /* SwiftPrompts.framework */,
+				CDA6F50A1CA293E9003CE0A2 /* SwiftPrompts-Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -59,6 +83,19 @@
 				CDA6F4F41CA28FFF003CE0A2 /* Info.plist */,
 			);
 			path = SwiftPrompts;
+			sourceTree = "<group>";
+		};
+		CDA6F50B1CA293E9003CE0A2 /* SwiftPrompts-Example */ = {
+			isa = PBXGroup;
+			children = (
+				CDA6F51E1CA29449003CE0A2 /* Main.storyboard */,
+				CDA6F51C1CA2942A003CE0A2 /* SwiftPromptsVC.swift */,
+				CDA6F50C1CA293E9003CE0A2 /* AppDelegate.swift */,
+				CDA6F5131CA293EA003CE0A2 /* Assets.xcassets */,
+				CDA6F5151CA293EA003CE0A2 /* LaunchScreen.storyboard */,
+				CDA6F5181CA293EA003CE0A2 /* Info.plist */,
+			);
+			path = "SwiftPrompts-Example";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,15 +130,36 @@
 			productReference = CDA6F4EF1CA28FFF003CE0A2 /* SwiftPrompts.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		CDA6F5091CA293E9003CE0A2 /* SwiftPrompts-Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDA6F51B1CA293EA003CE0A2 /* Build configuration list for PBXNativeTarget "SwiftPrompts-Example" */;
+			buildPhases = (
+				CDA6F5061CA293E9003CE0A2 /* Sources */,
+				CDA6F5071CA293E9003CE0A2 /* Frameworks */,
+				CDA6F5081CA293E9003CE0A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SwiftPrompts-Example";
+			productName = "SwiftPrompts-Example";
+			productReference = CDA6F50A1CA293E9003CE0A2 /* SwiftPrompts-Example.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		CDA6F4E61CA28FFF003CE0A2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				TargetAttributes = {
 					CDA6F4EE1CA28FFF003CE0A2 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					CDA6F5091CA293E9003CE0A2 = {
 						CreatedOnToolsVersion = 7.3;
 					};
 				};
@@ -112,6 +170,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CDA6F4E51CA28FFF003CE0A2;
 			productRefGroup = CDA6F4F01CA28FFF003CE0A2 /* Products */;
@@ -119,6 +178,7 @@
 			projectRoot = "";
 			targets = (
 				CDA6F4EE1CA28FFF003CE0A2 /* SwiftPrompts */,
+				CDA6F5091CA293E9003CE0A2 /* SwiftPrompts-Example */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +188,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDA6F5081CA293E9003CE0A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDA6F51F1CA29449003CE0A2 /* Main.storyboard in Resources */,
+				CDA6F5171CA293EA003CE0A2 /* LaunchScreen.storyboard in Resources */,
+				CDA6F5141CA293EA003CE0A2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +214,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CDA6F5061CA293E9003CE0A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDA6F5221CA29473003CE0A2 /* UIImageEffects.swift in Sources */,
+				CDA6F51D1CA2942A003CE0A2 /* SwiftPromptsVC.swift in Sources */,
+				CDA6F50D1CA293E9003CE0A2 /* AppDelegate.swift in Sources */,
+				CDA6F5211CA2946F003CE0A2 /* SwiftPromptsView.swift in Sources */,
+				CDA6F5201CA2946C003CE0A2 /* SwiftPrompts.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CDA6F5151CA293EA003CE0A2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CDA6F5161CA293EA003CE0A2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CDA6F4F51CA28FFF003CE0A2 /* Debug */ = {
@@ -275,6 +368,28 @@
 			};
 			name = Release;
 		};
+		CDA6F5191CA293EA003CE0A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "SwiftPrompts-Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "GabrielAlva.SwiftPrompts-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CDA6F51A1CA293EA003CE0A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "SwiftPrompts-Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "GabrielAlva.SwiftPrompts-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -295,6 +410,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		CDA6F51B1CA293EA003CE0A2 /* Build configuration list for PBXNativeTarget "SwiftPrompts-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDA6F5191CA293EA003CE0A2 /* Debug */,
+				CDA6F51A1CA293EA003CE0A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
