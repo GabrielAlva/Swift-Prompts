@@ -8,18 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		CDA6F4F31CA28FFF003CE0A2 /* SwiftPrompts.h in Headers */ = {isa = PBXBuildFile; fileRef = CDA6F4F21CA28FFF003CE0A2 /* SwiftPrompts.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CDA6F4FD1CA2902C003CE0A2 /* SwiftPrompts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6F4FA1CA2902C003CE0A2 /* SwiftPrompts.swift */; };
-		CDA6F4FE1CA2902C003CE0A2 /* SwiftPromptsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6F4FB1CA2902C003CE0A2 /* SwiftPromptsView.swift */; };
-		CDA6F4FF1CA2902C003CE0A2 /* UIImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6F4FC1CA2902C003CE0A2 /* UIImageEffects.swift */; };
+		CDA6F5031CA29120003CE0A2 /* SwiftPrompts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6F5001CA29120003CE0A2 /* SwiftPrompts.swift */; };
+		CDA6F5041CA29120003CE0A2 /* SwiftPromptsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6F5011CA29120003CE0A2 /* SwiftPromptsView.swift */; };
+		CDA6F5051CA29120003CE0A2 /* UIImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6F5021CA29120003CE0A2 /* UIImageEffects.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CDA6F4EF1CA28FFF003CE0A2 /* SwiftPrompts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftPrompts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA6F4F21CA28FFF003CE0A2 /* SwiftPrompts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftPrompts.h; sourceTree = "<group>"; };
 		CDA6F4F41CA28FFF003CE0A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CDA6F4FA1CA2902C003CE0A2 /* SwiftPrompts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftPrompts.swift; path = "../../Swift-Prompts/SwiftPrompts.swift"; sourceTree = "<group>"; };
-		CDA6F4FB1CA2902C003CE0A2 /* SwiftPromptsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftPromptsView.swift; path = "../../Swift-Prompts/SwiftPromptsView.swift"; sourceTree = "<group>"; };
-		CDA6F4FC1CA2902C003CE0A2 /* UIImageEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageEffects.swift; path = "../../Swift-Prompts/UIImageEffects.swift"; sourceTree = "<group>"; };
+		CDA6F5001CA29120003CE0A2 /* SwiftPrompts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPrompts.swift; sourceTree = "<group>"; };
+		CDA6F5011CA29120003CE0A2 /* SwiftPromptsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPromptsView.swift; sourceTree = "<group>"; };
+		CDA6F5021CA29120003CE0A2 /* UIImageEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageEffects.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,9 +52,9 @@
 		CDA6F4F11CA28FFF003CE0A2 /* SwiftPrompts */ = {
 			isa = PBXGroup;
 			children = (
-				CDA6F4FA1CA2902C003CE0A2 /* SwiftPrompts.swift */,
-				CDA6F4FB1CA2902C003CE0A2 /* SwiftPromptsView.swift */,
-				CDA6F4FC1CA2902C003CE0A2 /* UIImageEffects.swift */,
+				CDA6F5001CA29120003CE0A2 /* SwiftPrompts.swift */,
+				CDA6F5011CA29120003CE0A2 /* SwiftPromptsView.swift */,
+				CDA6F5021CA29120003CE0A2 /* UIImageEffects.swift */,
 				CDA6F4F21CA28FFF003CE0A2 /* SwiftPrompts.h */,
 				CDA6F4F41CA28FFF003CE0A2 /* Info.plist */,
 			);
@@ -138,9 +138,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDA6F4FE1CA2902C003CE0A2 /* SwiftPromptsView.swift in Sources */,
-				CDA6F4FD1CA2902C003CE0A2 /* SwiftPrompts.swift in Sources */,
-				CDA6F4FF1CA2902C003CE0A2 /* UIImageEffects.swift in Sources */,
+				CDA6F5051CA29120003CE0A2 /* UIImageEffects.swift in Sources */,
+				CDA6F5041CA29120003CE0A2 /* SwiftPromptsView.swift in Sources */,
+				CDA6F5031CA29120003CE0A2 /* SwiftPrompts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +292,7 @@
 				CDA6F4F91CA28FFF003CE0A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
