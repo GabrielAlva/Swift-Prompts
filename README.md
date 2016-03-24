@@ -28,7 +28,7 @@ pod 'Swift-Prompts', '~> 1.0.0'
 Using [Carthage](https://github.com/Carthage/Carthage):
 
 ```
-github "patricks/Swift-Prompts"
+github "GabrielAlva/Swift-Prompts"
 ```
 
 ### Manually
