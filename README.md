@@ -2,6 +2,7 @@
 [![Pod Version](http://img.shields.io/cocoapods/v/Swift-Prompts.svg?style=flat)](http://cocoadocs.org/docsets/Swift-Prompts/)
 [![Pod Platform](http://img.shields.io/cocoapods/p/Swift-Prompts.svg?style=flat)](http://cocoadocs.org/docsets/Swift-Prompts/)
 [![Pod License](http://img.shields.io/cocoapods/l/Swift-Prompts.svg?style=flat)](http://opensource.org/licenses/MIT)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ![Swift Prompts.](https://raw.githubusercontent.com/GabrielAlva/Swift-Prompts/master/MarkdownImage.png)
 <br />
@@ -28,7 +29,7 @@ pod 'Swift-Prompts', '~> 1.0.0'
 Using [Carthage](https://github.com/Carthage/Carthage):
 
 ```
-github "patricks/Swift-Prompts"
+github "GabrielAlva/Swift-Prompts"
 ```
 
 ### Manually
