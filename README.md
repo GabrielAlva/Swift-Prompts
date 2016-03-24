@@ -23,6 +23,14 @@ pod 'Swift-Prompts', '~> 1.0.0'
 
 **Note**: We follow http://semver.org for versioning the public API.
 
+### Carthage
+
+Using [Carthage](https://github.com/Carthage/Carthage):
+
+```
+github "patricks/Swift-Prompts"
+```
+
 ### Manually
 * Just include the three .swift files found on the `Swift Prompts` folder on the demo Xcode project.
 
