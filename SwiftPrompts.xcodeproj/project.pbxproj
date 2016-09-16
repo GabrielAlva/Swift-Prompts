@@ -158,6 +158,7 @@
 				TargetAttributes = {
 					CDA6F4EE1CA28FFF003CE0A2 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 					};
 					CDA6F5091CA293E9003CE0A2 = {
 						CreatedOnToolsVersion = 7.3;
@@ -347,6 +348,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -365,6 +367,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = GabrielAlva.SwiftPrompts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -418,6 +421,7 @@
 				CDA6F51A1CA293EA003CE0A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
