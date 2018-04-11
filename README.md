@@ -80,11 +80,11 @@ prompt.dismissPrompt()
 ```
 Alternatively, the dismissal by gesture is enabled by default so you can dismiss a prompt by moving it up or down until it dims completely. Dismissal by gesture will trigger the `promptWasDismissed()` delegate function.
 
-##Customization
+## Customization
 
 Once you have your assigned the frame and delegate, you can customize the look and feel of your prompt and its background. You can customize almost every aspect of it as shown above including the width and height. The demo app is well documented for you to use any function of the customization API. To see the full list you can navigate to the `SwiftPromptsView` class and look for the API pragma mark. 
 
-##Example
+## Example
 
 You can find a full example on usage and customization on the Xcode project attached to this repository.
 
