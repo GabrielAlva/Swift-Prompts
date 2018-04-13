@@ -19,7 +19,7 @@ class ViewController: UIViewController,  SwiftPromptsProtocol {
         
         //Set the background view image
         backgroundImageView.image = UIImage(named: "Alps")
-        backgroundImageView.contentMode = .ScaleAspectFill
+        backgroundImageView.contentMode = .scaleAspectFill
     }
 
     @IBAction func facebookPrompt(sender: UIButton) {
@@ -38,7 +38,7 @@ class ViewController: UIViewController,  SwiftPromptsProtocol {
         prompt.setPromptTopLineVisibility(false)
         prompt.setPromptBottomLineVisibility(true)
         prompt.setPromptHeaderBarColor(UIColor(red: 59.0/255.0, green: 89.0/255.0, blue: 152.0/255.0, alpha: 0.67))
-        prompt.setPromptHeaderTxtColor(UIColor.whiteColor())
+        prompt.setPromptHeaderTxtColor(UIColor.white)
         prompt.setPromptContentTxtColor(UIColor(red: 59.0/255.0, green: 89.0/255.0, blue: 152.0/255.0, alpha: 0.72))
         prompt.setPromptBottomLineColor(UIColor(red: 151.0/255.0, green: 151.0/255.0, blue: 151.0/255.0, alpha: 1.0))
         prompt.setMainButtonText("ok")
@@ -52,7 +52,7 @@ class ViewController: UIViewController,  SwiftPromptsProtocol {
         prompt.delegate = self
         
         //Set the properties for the background
-        prompt.setColorWithTransparency(UIColor.clearColor())
+        prompt.setColorWithTransparency(UIColor.clear)
         
         //Set the properties of the prompt
         prompt.setPromptHeader("WhatsApp")
@@ -62,7 +62,7 @@ class ViewController: UIViewController,  SwiftPromptsProtocol {
         prompt.setPromptTopLineVisibility(false)
         prompt.setPromptBottomLineVisibility(true)
         prompt.setPromptHeaderBarColor(UIColor(red: 100.0/255.0, green: 212.0/255.0, blue: 72.0/255.0, alpha: 1.0))
-        prompt.setPromptHeaderTxtColor(UIColor.whiteColor())
+        prompt.setPromptHeaderTxtColor(UIColor.white)
         prompt.setPromptBottomLineColor(UIColor(red: 151.0/255.0, green: 151.0/255.0, blue: 151.0/255.0, alpha: 1.0))
         prompt.setPromptButtonDividerColor(UIColor(red: 151.0/255.0, green: 151.0/255.0, blue: 151.0/255.0, alpha: 1.0))
         prompt.enableDoubleButtonsOnPrompt()
@@ -89,7 +89,7 @@ class ViewController: UIViewController,  SwiftPromptsProtocol {
         prompt.setPromptTopLineColor(UIColor(red: 151.0/255.0, green: 151.0/255.0, blue: 151.0/255.0, alpha: 1.0))
         prompt.setPromptBackgroundColor(UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.67))
         prompt.setPromptBottomBarColor(UIColor(red: 34.0/255.0, green: 139.0/255.0, blue: 34.0/255.0, alpha: 0.67))
-        prompt.setMainButtonColor(UIColor.whiteColor())
+        prompt.setMainButtonColor(UIColor.white)
         prompt.setMainButtonText("OK")
         
         self.view.addSubview(prompt)
@@ -145,20 +145,20 @@ class ViewController: UIViewController,  SwiftPromptsProtocol {
         prompt.setPromptTopLineColor(UIColor(red: 151.0/255.0, green: 151.0/255.0, blue: 151.0/255.0, alpha: 1.0))
         prompt.setPromptBackgroundColor(UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.67))
         prompt.setPromptBottomBarColor(UIColor(red: 133.0/255.0, green: 133.0/255.0, blue: 133.0/255.0, alpha: 1.0))
-        prompt.setMainButtonColor(UIColor.whiteColor())
+        prompt.setMainButtonColor(UIColor.white)
         prompt.setMainButtonText("Delete")
         
         self.view.addSubview(prompt)
     }
-    
-    override func shouldAutorotate() -> Bool {
+
+    override var shouldAutorotate: Bool {
         return false
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.Portrait
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
     }
-    
+
     // MARK: - Delegate functions for the prompt
     
     func clickedOnTheMainButton() {

@@ -1,28 +1,32 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Swift_Prompts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftPrompts_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="maJ-je-P2j">
-                                <rect key="frame" x="4" y="0.0" width="592" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9u-Bl-7Y6">
-                                <rect key="frame" x="198" y="281" width="205" height="38"/>
+                                <rect key="frame" x="85.5" y="314.5" width="205" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="205" id="3KO-SK-8i8"/>
                                     <constraint firstAttribute="height" constant="30" id="FUy-qV-FUc"/>
@@ -33,8 +37,8 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Facebook Share" backgroundImage="ButtonBackground">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -45,11 +49,11 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="facebookPrompt:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nm1-CQ-blF"/>
+                                    <action selector="facebookPromptWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9LR-Lx-8jx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73o-b8-0Zl">
-                                <rect key="frame" x="198" y="411" width="205" height="38"/>
+                                <rect key="frame" x="85.5" y="444.5" width="205" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="2gs-67-8Hm"/>
                                     <constraint firstAttribute="height" constant="30" id="AS0-WG-8CP"/>
@@ -60,8 +64,8 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Instagram" backgroundImage="ButtonBackground">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -72,11 +76,11 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="instagramPrompt:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WmI-aU-EmY"/>
+                                    <action selector="instagramPromptWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1dX-QN-INF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwm-uh-xxb">
-                                <rect key="frame" x="198" y="216" width="205" height="38"/>
+                                <rect key="frame" x="85.5" y="249.5" width="205" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="2Nm-cG-snX"/>
                                     <constraint firstAttribute="width" constant="205" id="3bM-Lr-0O0"/>
@@ -87,8 +91,8 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Success" backgroundImage="ButtonBackground">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -99,11 +103,11 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="successPrompt:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wdY-XF-2F8"/>
+                                    <action selector="successPromptWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pPx-0d-Pln"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEw-in-dee">
-                                <rect key="frame" x="198" y="151" width="205" height="38"/>
+                                <rect key="frame" x="85.5" y="184.5" width="205" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="165" id="6ex-ke-SWr"/>
                                     <constraint firstAttribute="width" constant="150" id="9CT-2n-Wd2"/>
@@ -114,8 +118,8 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Delete" backgroundImage="ButtonBackground">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -126,21 +130,21 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="deletePrompt:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UjM-bs-o6O"/>
+                                    <action selector="deletePromptWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gpc-hc-Wbp"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swift Prompts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOE-S9-17f">
-                                <rect key="frame" x="193" y="40" width="214" height="35"/>
+                                <rect key="frame" x="80.5" y="40" width="214" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="IfW-2d-USa"/>
                                     <constraint firstAttribute="width" constant="214" id="pjJ-QI-cpT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLf-zf-RJH">
-                                <rect key="frame" x="198" y="346" width="205" height="38"/>
+                                <rect key="frame" x="85.5" y="379.5" width="205" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="FIG-Dq-OkT"/>
                                     <constraint firstAttribute="height" constant="30" id="Yzs-5t-5ez"/>
@@ -151,8 +155,8 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="WhatsApp Share" backgroundImage="ButtonBackground">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -163,11 +167,11 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="whatsAppPrompt:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N3f-A1-RBr"/>
+                                    <action selector="whatsAppPromptWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fii-Om-gF3"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="r9u-Bl-7Y6" secondAttribute="centerY" id="442-zB-gLT"/>
                             <constraint firstItem="VLf-zf-RJH" firstAttribute="top" secondItem="r9u-Bl-7Y6" secondAttribute="bottom" constant="27" id="8V0-xL-FnW"/>
