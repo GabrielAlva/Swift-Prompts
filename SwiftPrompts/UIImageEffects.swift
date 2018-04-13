@@ -152,11 +152,11 @@ public extension UIImage {
             return nil
         }
         if maskImage != nil && maskImage!.cgImage == nil {
-            print("*** error: maskImage must be backed by a CGImage: \(maskImage)")
+            print("*** error: maskImage must be backed by a CGImage: \(String(describing: maskImage))")
             return nil
         }
 
-        let __FLT_EPSILON__ = CGFloat(FLT_EPSILON)
+        let __FLT_EPSILON__ = CGFloat(Float.ulpOfOne)
         let screenScale = UIScreen.main.scale
         let imageRect = CGRect(origin: CGPoint.zero, size: size)
         var effectImage = self
@@ -205,7 +205,7 @@ public extension UIImage {
                 //
 
                 let inputRadius = blurRadius * screenScale
-                var radius = UInt32(floor(inputRadius * 3.0 * CGFloat(sqrt(2 * M_PI)) / 4 + 0.5))
+                var radius = UInt32(floor(inputRadius * 3.0 * CGFloat(sqrt(2 * Double.pi)) / 4 + 0.5))
                 if radius % 2 != 1 {
                     radius += 1 // force radius to be odd so that the three box-blur methodology works.
                 }
