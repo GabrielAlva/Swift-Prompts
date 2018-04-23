@@ -169,7 +169,7 @@ open class SwiftPromptsView: UIView {
         self.layer.add(applicationLoadViewIn, forKey: kCATransitionReveal)
     }
     
-    func panelButtonAction(_ sender:UIButton?) {
+    @objc func panelButtonAction(_ sender:UIButton?) {
         switch (sender!.tag) {
         case 1:
             delegate?.clickedOnTheMainButton?()
@@ -190,7 +190,7 @@ open class SwiftPromptsView: UIView {
         return image;
     }
     
-    open func dismissPrompt() {
+    @objc open func dismissPrompt() {
         UIView.animate(withDuration: 0.6, animations: {
             self.layer.opacity = 0.0
             }, completion: {
@@ -274,7 +274,7 @@ open class SwiftPromptsView: UIView {
             SwiftPrompts.drawSwiftPrompt(frame: self.bounds, backgroundColor: masterClass.promptBackgroundColor, headerBarColor: masterClass.promptHeaderBarColor, bottomBarColor: masterClass.promptBottomBarColor, headerTxtColor: masterClass.promptHeaderTxtColor, contentTxtColor: masterClass.promptContentTxtColor, outlineColor: masterClass.promptOutlineColor, topLineColor: masterClass.promptTopLineColor, bottomLineColor: masterClass.promptBottomLineColor, dismissIconButton: masterClass.promptDismissIconColor, promptText: masterClass.promptContentText, textSize: masterClass.promptContentTxtSize, topBarVisibility: masterClass.promptTopBarVisibility, bottomBarVisibility: masterClass.promptBottomBarVisibility, headerText: masterClass.promptHeader, headerSize: masterClass.promptHeaderTxtSize, topLineVisibility: masterClass.promptTopLineVisibility, bottomLineVisibility: masterClass.promptBottomLineVisibility, outlineVisibility: masterClass.promptOutlineVisibility, dismissIconVisibility: masterClass.promptDismissIconVisibility)
         }
         
-        func detectPan(_ recognizer:UIPanGestureRecognizer)
+        @objc func detectPan(_ recognizer:UIPanGestureRecognizer)
         {
             if lastLocation==CGPoint.zero{
                 lastLocation = self.center

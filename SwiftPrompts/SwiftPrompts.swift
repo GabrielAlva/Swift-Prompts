@@ -49,7 +49,7 @@ open class SwiftPrompts : NSObject {
         let textStyle = NSMutableParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
         textStyle.alignment = NSTextAlignment.center
 
-        let textFontAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: textSize)!, NSForegroundColorAttributeName: contentTxtColor, NSParagraphStyleAttributeName: textStyle]
+        let textFontAttributes = [NSAttributedStringKey.font: UIFont(name: "HelveticaNeue-Light", size: textSize)!, NSAttributedStringKey.foregroundColor: contentTxtColor, NSAttributedStringKey.paragraphStyle: textStyle]
 
         let textTextHeight: CGFloat = NSString(string: promptText).boundingRect(with: CGSize(width: textRect.width, height: CGFloat.infinity), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: textFontAttributes, context: nil).size.height
         context?.saveGState()
@@ -72,7 +72,7 @@ open class SwiftPrompts : NSObject {
         let text2Style = NSMutableParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
         text2Style.alignment = NSTextAlignment.center
 
-        let text2FontAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: headerSize)!, NSForegroundColorAttributeName: headerTxtColor, NSParagraphStyleAttributeName: text2Style]
+        let text2FontAttributes = [NSAttributedStringKey.font: UIFont(name: "HelveticaNeue-Light", size: headerSize)!, NSAttributedStringKey.foregroundColor: headerTxtColor, NSAttributedStringKey.paragraphStyle: text2Style]
 
         let text2TextHeight: CGFloat = NSString(string: headerText).boundingRect(with: CGSize(width: text2Rect.width, height: CGFloat.infinity), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: text2FontAttributes, context: nil).size.height
         context?.saveGState()
