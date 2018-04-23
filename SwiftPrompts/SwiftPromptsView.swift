@@ -183,7 +183,7 @@ open class SwiftPromptsView: UIView {
     // MARK: - Helper Functions
     func snapshot(_ view: UIView!) -> UIImage! {
         UIGraphicsBeginImageContextWithOptions(view.bounds.size, true, 0)
-        view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
         let image : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext();
         
