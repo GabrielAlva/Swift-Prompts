@@ -21,7 +21,7 @@ open class SwiftPromptsView: UIView {
     
     //Variables for the background view
     fileprivate var blurringLevel : CGFloat = 5.0
-    fileprivate var colorWithTransparency = UIColor(red: 255.0, green: 255.0, blue: 255.0, alpha: 0.64)
+    fileprivate var colorWithTransparency = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.64)
     fileprivate var enableBlurring : Bool = true
     fileprivate var enableTransparencyWithColor : Bool = true
     
